@@ -20,8 +20,13 @@ export class SupplierComponent implements OnInit {
       data: { id: null, company_name: '' },
     });
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    // });
+    const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
+      console.log('The dialog was submitted');
+      dialogRef.close();
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      submitForm.unsubscribe();
+    });
   }
 }

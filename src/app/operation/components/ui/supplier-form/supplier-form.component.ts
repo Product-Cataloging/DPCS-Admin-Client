@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Supplier } from 'src/app/operation/models/supplier.model';
@@ -11,6 +11,7 @@ import { Supplier } from 'src/app/operation/models/supplier.model';
 export class SupplierFormComponent implements OnInit {
 
   form: FormGroup;
+  @Output() submitForm = new EventEmitter();
 
   constructor(
     private fb: FormBuilder,
@@ -26,7 +27,11 @@ export class SupplierFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitForm.emit();
+  }
 
+  onClose() {
+    this.dialogRef.close();
   }
 
 }
