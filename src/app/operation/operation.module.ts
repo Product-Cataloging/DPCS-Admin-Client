@@ -13,6 +13,8 @@ import { CustomerComponent } from './components/container/customer/customer.comp
 import { CustomerFormComponent } from './components/ui/customer-form/customer-form.component';
 import { CurrencyComponent } from './components/container/currency/currency.component';
 import { CurrencyFormComponent } from './components/ui/currency-form/currency-form.component';
+import { UnitOfMeasureComponent } from './components/container/unit-of-measure/unit-of-measure.component';
+import { UnitOfMeasureFormComponent } from './components/ui/unit-of-measure-form/unit-of-measure-form.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { CurrencyFormComponent } from './components/ui/currency-form/currency-fo
     CustomerComponent,
     CustomerFormComponent,
     CurrencyComponent,
-    CurrencyFormComponent
+    CurrencyFormComponent,
+    UnitOfMeasureComponent,
+    UnitOfMeasureFormComponent
   ],
   imports: [
     CommonModule,
