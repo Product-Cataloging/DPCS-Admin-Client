@@ -11,6 +11,8 @@ import { ProductComponent } from './components/container/product/product.compone
 import { ProductFormComponent } from './components/ui/product-form/product-form.component';
 import { CustomerComponent } from './components/container/customer/customer.component';
 import { CustomerFormComponent } from './components/ui/customer-form/customer-form.component';
+import { CurrencyComponent } from './components/container/currency/currency.component';
+import { CurrencyFormComponent } from './components/ui/currency-form/currency-form.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { CustomerFormComponent } from './components/ui/customer-form/customer-fo
     ProductComponent,
     ProductFormComponent,
     CustomerComponent,
-    CustomerFormComponent
+    CustomerFormComponent,
+    CurrencyComponent,
+    CurrencyFormComponent
   ],
   imports: [
     CommonModule,
