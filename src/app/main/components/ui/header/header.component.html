@@ -2,19 +2,19 @@
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start flex-sm-column flex-lg-row">
       <a href="/" class="d-flex align-items-center mb-lg-0 text-white text-decoration-none">
-        <h1 class="m-0">MAVEKO</h1>
+        <h1 class="m-0 fw-bold">MAVEKO</h1>
       </a>
 
       <div class="flex-fill d-block" style="font-size: 11px">
         <ul class="nav col-12 me-md-auto justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-white">Suppliers</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Categories</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Products</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Customers</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Address</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Conatct Info</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Currencies</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Units of Measure</a></li>
+          <li><a [routerLink]="['/suppliers']" class="nav-link px-2 text-white">Suppliers</a></li>
+          <li><a [routerLink]="['/categories']" class="nav-link px-2 text-white">Categories</a></li>
+          <li><a [routerLink]="['/products']" class="nav-link px-2 text-white">Products</a></li>
+          <li><a [routerLink]="['/customers']" class="nav-link px-2 text-white">Customers</a></li>
+          <li><a [routerLink]="['/address']" class="nav-link px-2 text-white">Address</a></li>
+          <li><a [routerLink]="['/contacts_info']" class="nav-link px-2 text-white">Conatct Info</a></li>
+          <li><a [routerLink]="['/currencies']" class="nav-link px-2 text-white">Currencies</a></li>
+          <li><a [routerLink]="['/units_of_measure']" class="nav-link px-2 text-white">Units of Measure</a></li>
         </ul>
       </div>
 
