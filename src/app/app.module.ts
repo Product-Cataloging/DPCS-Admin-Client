@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { AppCommonModule } from './app.common.module';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -12,7 +15,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ToastModule,
+    AppCommonModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
