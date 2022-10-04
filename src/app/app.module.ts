@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppCommonModule } from './app.common.module';
 import { ToastModule } from 'primeng/toast';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ToastModule } from 'primeng/toast';
     HttpClientModule,
     ToastModule,
     AppCommonModule,
+    AuthModule
 
   ],
   providers: [],
