@@ -9,6 +9,8 @@ import { CategoryComponent } from './components/container/category/category.comp
 import { CategoryFormComponent } from './components/ui/category-form/category-form.component';
 import { ProductComponent } from './components/container/product/product.component';
 import { ProductFormComponent } from './components/ui/product-form/product-form.component';
+import { CustomerComponent } from './components/container/customer/customer.component';
+import { CustomerFormComponent } from './components/ui/customer-form/customer-form.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ProductFormComponent } from './components/ui/product-form/product-form.
     CategoryComponent,
     CategoryFormComponent,
     ProductComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    CustomerComponent,
+    CustomerFormComponent
   ],
   imports: [
     CommonModule,
