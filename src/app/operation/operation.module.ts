@@ -7,6 +7,8 @@ import { SupplierComponent } from './components/container/supplier/supplier.comp
 import { AppCommonModule } from '../app.common.module';
 import { CategoryComponent } from './components/container/category/category.component';
 import { CategoryFormComponent } from './components/ui/category-form/category-form.component';
+import { ProductComponent } from './components/container/product/product.component';
+import { ProductFormComponent } from './components/ui/product-form/product-form.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { CategoryFormComponent } from './components/ui/category-form/category-fo
     SupplierFormComponent,
     SupplierComponent,
     CategoryComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
+    ProductComponent,
+    ProductFormComponent
   ],
   imports: [
     CommonModule,
