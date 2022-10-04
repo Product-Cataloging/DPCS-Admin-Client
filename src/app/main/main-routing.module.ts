@@ -5,7 +5,10 @@ import { LayoutComponent } from './components/container/layout/layout.component'
 const routes: Routes = [
   {
     path: '',
-    component: LayoutComponent
+    component: LayoutComponent,
+    children: [
+      { path: '', loadChildren: () => import('../operation/operation.module').then(m => m.OperationModule) }
+    ]
   }
 ];
 
