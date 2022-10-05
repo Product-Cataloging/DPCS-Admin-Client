@@ -8,26 +8,35 @@ import { CategoryStore } from './category.store';
 @Injectable({ providedIn: 'root' })
 export class CategoryService {
 
-  constructor(private categoryStore: CategoryStore, private http: HttpClient) {
+  constructor(private store: CategoryStore, private http: HttpClient) {
   }
 
-
+  categories: Category[] = [
+    { id: 1, name: 'abcd', description: 'this is some description' },
+    { id: 2, name: 'efg', description: 'this is some description for efg', parent_id: 1 },
+    { id: 3, name: 'hij', description: 'this is some description for hij', parent_id: 2 },
+    { id: 4, name: 'klm', description: 'this is some description for klm', parent_id: 1 },
+    { id: 5, name: 'nop', description: 'this is some description for nop', parent_id: 1 },
+    { id: 6, name: 'qrst', description: 'this is some description for qrst' },
+  ]
   get() {
-    return this.http.get<Category[]>('https://api.com').pipe(tap(entities => {
-      this.categoryStore.set(entities);
-    }));
+    // return this.http.get<Category[]>('https://api.com').pipe(tap(entities => {
+    //   this.categoryStore.set(entities);
+    // }));
+
+    return this.store.set(this.categories);
   }
 
   add(category: Category) {
-    this.categoryStore.add(category);
+    this.store.add(category);
   }
 
-  update(id, category: Partial<Category>) {
-    this.categoryStore.update(id, category);
+  update(id: number, category: Partial<Category>) {
+    this.store.update(id, category);
   }
 
   remove(id: ID) {
-    this.categoryStore.remove(id);
+    this.store.remove(id);
   }
 
 }

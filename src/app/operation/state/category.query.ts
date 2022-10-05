@@ -5,7 +5,7 @@ import { CategoryStore, CategoryState } from './category.store';
 @Injectable({ providedIn: 'root' })
 export class CategoryQuery extends QueryEntity<CategoryState> {
 
-  constructor(protected store: CategoryStore) {
+  constructor(protected override store: CategoryStore) {
     super(store);
   }
 

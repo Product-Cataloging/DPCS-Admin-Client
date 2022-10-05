@@ -21,7 +21,7 @@ export class CategoryFormComponent implements OnInit {
     this.form = this.fb.group({
       name: [this.data.name],
       description: [this.data.description],
-      parent_id: [this.data.parent_id]
+      parent_id: ["" + this.data.parent_id]//to convert the number to string
     });
   }
 
