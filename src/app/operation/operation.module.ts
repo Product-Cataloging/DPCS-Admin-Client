@@ -9,8 +9,6 @@ import { CategoryComponent } from './components/container/category/category.comp
 import { CategoryFormComponent } from './components/ui/category-form/category-form.component';
 import { ProductComponent } from './components/container/product/product.component';
 import { ProductFormComponent } from './components/ui/product-form/product-form.component';
-import { CustomerComponent } from './components/container/customer/customer.component';
-import { CustomerFormComponent } from './components/ui/customer-form/customer-form.component';
 import { CurrencyComponent } from './components/container/currency/currency.component';
 import { CurrencyFormComponent } from './components/ui/currency-form/currency-form.component';
 import { UnitOfMeasureComponent } from './components/container/unit-of-measure/unit-of-measure.component';
@@ -26,8 +24,6 @@ import { SharedModule } from '../shared/shared.module'
     CategoryFormComponent,
     ProductComponent,
     ProductFormComponent,
-    CustomerComponent,
-    CustomerFormComponent,
     CurrencyComponent,
     CurrencyFormComponent,
     UnitOfMeasureComponent,
