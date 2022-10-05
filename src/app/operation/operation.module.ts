@@ -13,7 +13,8 @@ import { CurrencyComponent } from './components/container/currency/currency.comp
 import { CurrencyFormComponent } from './components/ui/currency-form/currency-form.component';
 import { UnitOfMeasureComponent } from './components/container/unit-of-measure/unit-of-measure.component';
 import { UnitOfMeasureFormComponent } from './components/ui/unit-of-measure-form/unit-of-measure-form.component';
-import { SharedModule } from '../shared/shared.module'
+import { SharedModule } from '../shared/shared.module';
+import { ProductItemComponent } from './components/container/product-item/product-item.component'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { SharedModule } from '../shared/shared.module'
     CurrencyComponent,
     CurrencyFormComponent,
     UnitOfMeasureComponent,
-    UnitOfMeasureFormComponent
+    UnitOfMeasureFormComponent,
+    ProductItemComponent
   ],
   imports: [
     CommonModule,
