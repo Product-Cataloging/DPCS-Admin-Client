@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/operation/models/product.model';
 import { ProductQuery } from 'src/app/operation/state/product.query';
@@ -25,11 +26,14 @@ export class ProductComponent implements OnInit {
 
   tableActions = [
     { icon: 'edit', color: 'warn', tooltip: 'Edit' },
+    { icon: 'info', color: 'primary', tooltip: 'Items' },
   ];
+
   constructor(
     private dialog: MatDialog,
     private service: ProductService,
-    private query: ProductQuery) { }
+    private query: ProductQuery,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.service.get()
@@ -66,6 +70,9 @@ export class ProductComponent implements OnInit {
       dialogRef.afterClosed().subscribe(() => {
         submitForm.unsubscribe();
       });
+    }
+    else if ($event.type === 'info') {
+      this.router.navigateByUrl(this.router.url + `/${$event.item.id}`)
     }
   }
 }
