@@ -22,10 +22,6 @@ export class CategoryComponent implements OnInit {
     { name: 'parent_id', label: 'Parent Category ID' },
   ];
 
-  actions: any[] = [
-    { icon: 'add_circle', label: 'New', disabled: true }
-  ];
-
   tableActions = [
     { icon: 'edit', color: 'warn', tooltip: 'Edit' },
   ];

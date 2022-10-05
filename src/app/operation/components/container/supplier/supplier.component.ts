@@ -20,10 +20,6 @@ export class SupplierComponent implements OnInit {
     { name: 'name', label: 'Supplier Name' },
   ];
 
-  actions: any[] = [
-    { icon: 'add_circle', label: 'New', disabled: true }
-  ];
-
   tableActions = [
     { icon: 'edit', color: 'warn', tooltip: 'Edit' },
   ];

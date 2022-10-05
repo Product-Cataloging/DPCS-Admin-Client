@@ -23,10 +23,6 @@ export class ProductComponent implements OnInit {
     { name: 'supplier_id', label: 'Supplier ID' },
   ];
 
-  actions: any[] = [
-    { icon: 'add_circle', label: 'New', disabled: true }
-  ];
-
   tableActions = [
     { icon: 'edit', color: 'warn', tooltip: 'Edit' },
   ];

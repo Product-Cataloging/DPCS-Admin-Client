@@ -21,10 +21,6 @@ export class CurrencyComponent implements OnInit {
     { name: 'alias', label: 'Alias' },
   ];
 
-  actions: any[] = [
-    { icon: 'add_circle', label: 'New', disabled: true }
-  ];
-
   tableActions = [
     { icon: 'edit', color: 'warn', tooltip: 'Edit' },
   ];
