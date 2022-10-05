@@ -10,14 +10,13 @@ import { Column } from '../../models/column.model';
 export class ListComponent implements OnInit {
   @Input() data: any;
   @Input() columns: Column[] = [];
-  @Input() caption: string;
+  @Input() caption: string = '';
   @Input() actions: any;
-  @Input() checkbox: boolean;
-  @Input() hasAction: boolean;
-  @Input() loading: boolean;
-  @Input() checkedData: any[];
+  @Input() checkbox: boolean = false;
+  @Input() hasAction: boolean = true;
+  @Input() loading: boolean = false;
+  @Input() checkedData: any[] = [];
   @Input() columnFilterOptions: any[] = [];
-  @ViewChild('dt') dt: Table;
 
 
   @Output() actionClick = new EventEmitter<any>();

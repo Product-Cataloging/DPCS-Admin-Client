@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListComponent } from './components/list/list.component';
+import { AppCommonModule } from '../app.common.module';
 
 
 
@@ -9,7 +10,8 @@ import { ListComponent } from './components/list/list.component';
     ListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppCommonModule
   ],
   exports: [
     ListComponent

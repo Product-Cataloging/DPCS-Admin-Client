@@ -15,6 +15,7 @@ import { CurrencyComponent } from './components/container/currency/currency.comp
 import { CurrencyFormComponent } from './components/ui/currency-form/currency-form.component';
 import { UnitOfMeasureComponent } from './components/container/unit-of-measure/unit-of-measure.component';
 import { UnitOfMeasureFormComponent } from './components/ui/unit-of-measure-form/unit-of-measure-form.component';
+import { SharedModule } from '../shared/shared.module'
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { UnitOfMeasureFormComponent } from './components/ui/unit-of-measure-form
   imports: [
     CommonModule,
     OperationRoutingModule,
-    AppCommonModule
+    AppCommonModule,
+    SharedModule
   ]
 })
 export class OperationModule { }
