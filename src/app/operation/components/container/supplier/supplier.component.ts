@@ -17,7 +17,7 @@ export class SupplierComponent implements OnInit {
   onNewClick(): void {
     const dialogRef = this.dialog.open(SupplierFormComponent, {
       width: '500px',
-      data: { id: null, company_name: '' },
+      data: { id: null, name: '' },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {

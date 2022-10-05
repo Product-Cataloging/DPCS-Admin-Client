@@ -17,7 +17,7 @@ export class CategoryComponent implements OnInit {
   onNewClick() {
     const dialogRef = this.dialog.open(CategoryFormComponent, {
       width: '500px',
-      data: { id: null, company_name: '' },
+      data: { id: null, name: '' },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
