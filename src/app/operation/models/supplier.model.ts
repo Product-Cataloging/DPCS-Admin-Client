@@ -1,6 +1,6 @@
 export interface Supplier {
   id: number;
-  company_name: string;
+  name: string;
 }
 
 export function createSupplier(params: Partial<Supplier>) {
