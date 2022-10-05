@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
+import { Currency } from 'src/app/operation/models/currency.model';
+import { CurrencyQuery } from 'src/app/operation/state/currency.query';
+import { CurrencyService } from 'src/app/operation/state/currency.service';
+import { Column } from 'src/app/shared/models/column.model';
 import { CurrencyFormComponent } from '../../ui/currency-form/currency-form.component';
 
 @Component({
@@ -9,9 +14,28 @@ import { CurrencyFormComponent } from '../../ui/currency-form/currency-form.comp
 })
 export class CurrencyComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  currencies$: Observable<Currency[]> = this.query.selectAll();
+
+  columns: Column[] = [
+    { name: 'name', label: 'Name' },
+    { name: 'alias', label: 'Alias' },
+  ];
+
+  actions: any[] = [
+    { icon: 'add_circle', label: 'New', disabled: true }
+  ];
+
+  tableActions = [
+    { icon: 'edit', color: 'warn', tooltip: 'Edit' },
+  ];
+
+  constructor(
+    private dialog: MatDialog,
+    private service: CurrencyService,
+    private query: CurrencyQuery) { }
 
   ngOnInit(): void {
+    this.service.get()
   }
 
   onNewClick(): void {
@@ -28,5 +52,23 @@ export class CurrencyComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       submitForm.unsubscribe();
     });
+  }
+
+  onClick($event: any) {
+    if ($event.type === 'edit') {
+      const dialogRef = this.dialog.open(CurrencyFormComponent, {
+        width: '500px',
+        data: $event.item,
+      });
+
+      const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
+        console.log('The dialog was submitted');
+        dialogRef.close();
+      });
+
+      dialogRef.afterClosed().subscribe(() => {
+        submitForm.unsubscribe();
+      });
+    }
   }
 }

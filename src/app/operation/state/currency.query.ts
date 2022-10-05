@@ -5,7 +5,7 @@ import { CurrencyStore, CurrencyState } from './currency.store';
 @Injectable({ providedIn: 'root' })
 export class CurrencyQuery extends QueryEntity<CurrencyState> {
 
-  constructor(protected store: CurrencyStore) {
+  constructor(protected override store: CurrencyStore) {
     super(store);
   }
 
