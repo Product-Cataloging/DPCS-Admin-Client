@@ -14,13 +14,13 @@ export class ProductService {
   }
 
   products: Product[] = [
-    { id: 1, name: 'product 1', image_url: 'https://someurl.com', description: 'this is description for product 1', category_id: 1, supplier_id: 1 },
-    { id: 2, name: 'product 2', image_url: 'https://someurl.com', description: 'this is description for product 2', category_id: 2, supplier_id: 2 },
-    { id: 3, name: 'product 3', image_url: 'https://someurl.com', description: 'this is description for product 3', category_id: 3, supplier_id: 2 },
-    { id: 4, name: 'product 4', image_url: 'https://someurl.com', description: 'this is description for product 4', category_id: 1, supplier_id: 1 },
-    { id: 5, name: 'product 5', image_url: 'https://someurl.com', description: 'this is description for product 5', category_id: 1, supplier_id: 2 },
-    { id: 6, name: 'product 6', image_url: 'https://someurl.com', description: 'this is description for product 6', category_id: 3, supplier_id: 1 },
-    { id: 7, name: 'product 7', image_url: 'https://someurl.com', description: 'this is description for product 7', category_id: 1, supplier_id: 1 },
+    { id: 1, name: 'product 1', image_url: 'https://someurl.com', description: 'this is description for product 1', category_id: 1, brand: 'contacto' },
+    { id: 2, name: 'product 2', image_url: 'https://someurl.com', description: 'this is description for product 2', category_id: 2, brand: 'JP' },
+    { id: 3, name: 'product 3', image_url: 'https://someurl.com', description: 'this is description for product 3', category_id: 3, brand: 'JP' },
+    { id: 4, name: 'product 4', image_url: 'https://someurl.com', description: 'this is description for product 4', category_id: 1, brand: 'contacto' },
+    { id: 5, name: 'product 5', image_url: 'https://someurl.com', description: 'this is description for product 5', category_id: 1, brand: 'JP' },
+    { id: 6, name: 'product 6', image_url: 'https://someurl.com', description: 'this is description for product 6', category_id: 3, brand: 'contacto' },
+    { id: 7, name: 'product 7', image_url: 'https://someurl.com', description: 'this is description for product 7', category_id: 1, brand: 'JP' },
   ]
 
   get() {

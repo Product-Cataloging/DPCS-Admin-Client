@@ -19,10 +19,10 @@ export class ProductComponent implements OnInit {
 
   columns: Column[] = [
     { name: 'name', label: 'Product Name' },
+    { name: 'brand', label: 'Brand' },
     { name: 'description', label: 'Description' },
     { name: 'image_url', label: 'Image Url' },
     { name: 'category_id', label: 'Category ID' },
-    { name: 'supplier_id', label: 'Supplier ID' },
   ];
 
   tableActions = [
@@ -43,7 +43,7 @@ export class ProductComponent implements OnInit {
   onNewClick(): void {
     const dialogRef = this.dialog.open(ProductFormComponent, {
       width: '500px',
-      data: { id: null, name: '', description: '', image_url: '', category_id: null, product_id: null },
+      data: { id: null, name: '', description: '', image_url: '', category_id: null, brand: '' },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {

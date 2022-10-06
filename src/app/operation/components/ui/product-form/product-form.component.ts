@@ -37,7 +37,7 @@ export class ProductFormComponent implements OnInit {
       description: [this.data.description],
       image_url: [this.data.image_url],
       category_id: [this.data.category_id],
-      supplier_id: [this.data.supplier_id]
+      brand: [this.data.brand]
     });
   }
 

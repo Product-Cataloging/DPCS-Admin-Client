@@ -4,7 +4,7 @@ export interface Product {
   description: string;
   image_url: string;
   category_id: number;
-  supplier_id: number;
+  brand: string;
 }
 
 export function createProduct(params: Partial<Product>) {
