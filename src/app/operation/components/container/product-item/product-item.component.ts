@@ -22,12 +22,10 @@ export class ProductItemComponent implements OnInit {
   selectedItems: ProductItem[] = [];
 
   columns: Column[] = [
-    { name: 'product_image', label: 'Product Image' },
+    { name: 'dimensions', label: 'Dimensions' },
     { name: 'color', label: 'Color' },
-    { name: 'size', label: 'Size' },
-    { name: 'price', label: 'Price' },
-    { name: 'currency_id', label: 'Currency ID' },
-    { name: 'unit_of_measure_id', label: 'Unit of Measure ID' },
+    { name: 'material', label: 'Material' },
+    { name: 'unit_id', label: 'Unit of Measure ID' },
   ];
 
   tableActions = [
@@ -50,11 +48,11 @@ export class ProductItemComponent implements OnInit {
   onNewClick(): void {
     const dialogRef = this.dialog.open(ProductItemFormComponent, {
       width: '500px',
-      data: { id: null, product_image: '', color: '', size: '', price: null, currency_id: null, unit_of_measure_id: null },
+      data: { id: null, dimensions: '', color: '', material: '', unit_id: null },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
-      console.log('The dialog was submitted');
+      this.service.add(data).subscribe();
       dialogRef.close();
     });
 
@@ -71,7 +69,7 @@ export class ProductItemComponent implements OnInit {
       });
 
       const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
-        console.log('The dialog was submitted');
+        this.service.update($event.item.id, data).subscribe();
         dialogRef.close();
       });
 

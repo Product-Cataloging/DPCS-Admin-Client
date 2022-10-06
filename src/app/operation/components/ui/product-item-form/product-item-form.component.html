@@ -1,31 +1,21 @@
 <form [formGroup]="form" (submit)="onSubmit()" class="p-3">
   <mat-form-field class="d-block">
-    <mat-label>Image Url</mat-label>
-    <input matInput formControlName="product_image" required>
+    <mat-label>Dimensions</mat-label>
+    <input matInput formControlName="dimensions" required>
   </mat-form-field>
   <mat-form-field class="d-block">
     <mat-label>Color</mat-label>
     <input matInput formControlName="color">
   </mat-form-field>
   <mat-form-field class="d-block">
-    <mat-label>Size</mat-label>
-    <input matInput formControlName="size">
+    <mat-label>Material</mat-label>
+    <input matInput formControlName="material">
   </mat-form-field>
   <mat-form-field class="d-block">
     <mat-label>Unit of Measure</mat-label>
-    <mat-select formControlName="unit_of_measure_id" required>
-      <mat-option value="1">First option</mat-option>
-      <mat-option value="2">Second option</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field class="d-block">
-    <mat-label>Price</mat-label>
-    <input matInput type="number" formControlName="price" required>
-  </mat-form-field>
-  <mat-form-field class="d-block">
-    <mat-label>Currency</mat-label>
-    <mat-select formControlName="currency_id" required>
-      <mat-option *ngFor="let currency of currencies$|async" [value]='currency.id'>{{ currency.alias }}</mat-option>
+    <mat-select formControlName="unit_id" required>
+      <mat-option *ngFor="let unit_of_measure of units_of_measure$|async" [value]='unit_of_measure.id'>{{
+        unit_of_measure.alias }}</mat-option>
     </mat-select>
   </mat-form-field>
 
