@@ -27,12 +27,12 @@ export class CurrencyService {
     this.store.set(this.currencies)
   }
 
-  add(currency: Currency) {
-    const url = `${environment.apiUrl}/currencies`;
-    this.store.add(currency)//remove when connected with api
-    return UtilService.add(url, { payload: currency }, this.http, this.store);
-    // return this.http.post('https://product-catalog-api.onrender.com/suppliers', {payload: supplier})
-  }
+  // add(currency: Currency) {
+  //   const url = `${environment.apiUrl}/currencies`;
+  //   this.store.add(currency)//remove when connected with api
+  //   return UtilService.add(url, { payload: currency }, this.http, this.store);
+  //   // return this.http.post('https://product-catalog-api.onrender.com/suppliers', {payload: supplier})
+  // }
 
   update(id: number, currency: Partial<Currency>) {
     const url = `${environment.apiUrl}/currencies`;

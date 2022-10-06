@@ -34,21 +34,21 @@ export class CurrencyComponent implements OnInit {
     this.service.get()
   }
 
-  onNewClick(): void {
-    const dialogRef = this.dialog.open(CurrencyFormComponent, {
-      width: '500px',
-      data: { id: null, name: '', alias: '' },
-    });
+  // onNewClick(): void {
+  //   const dialogRef = this.dialog.open(CurrencyFormComponent, {
+  //     width: '500px',
+  //     data: { id: null, name: '', alias: '' },
+  //   });
 
-    const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
-      this.service.add(data).subscribe();
-      dialogRef.close();
-    });
+  //   const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
+  //     this.service.add(data).subscribe();
+  //     dialogRef.close();
+  //   });
 
-    dialogRef.afterClosed().subscribe(() => {
-      submitForm.unsubscribe();
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(() => {
+  //     submitForm.unsubscribe();
+  //   });
+  // }
 
   onClick($event: any) {
     if ($event.type === 'edit') {
