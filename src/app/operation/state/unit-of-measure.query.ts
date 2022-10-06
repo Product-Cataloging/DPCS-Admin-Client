@@ -5,7 +5,7 @@ import { UnitOfMeasureStore, UnitOfMeasureState } from './unit-of-measure.store'
 @Injectable({ providedIn: 'root' })
 export class UnitOfMeasureQuery extends QueryEntity<UnitOfMeasureState> {
 
-  constructor(protected store: UnitOfMeasureStore) {
+  constructor(protected override store: UnitOfMeasureStore) {
     super(store);
   }
 

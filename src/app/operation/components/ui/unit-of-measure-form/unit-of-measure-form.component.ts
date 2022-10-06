@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { UnitOfMeasure } from 'src/app/operation/models/unit-of-measure.model';
 
 @Component({
   selector: 'app-unit-of-measure-form',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnitOfMeasureFormComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup
+  @Output() submitForm = new EventEmitter();
+
+  constructor(
+    private fb: FormBuilder,
+    public dialogRef: MatDialogRef<UnitOfMeasureFormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: UnitOfMeasure) {
+    this.form = this.fb.group({
+      name: [this.data.name],
+      alias: [this.data.alias]
+    })
+  }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    this.submitForm.emit(this.form.value);
+  }
+
+  onClose() {
+    this.dialogRef.close();
+  }
 }
