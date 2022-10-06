@@ -36,7 +36,9 @@ export class SupplierService {
   }
 
   update(id: number, supplier: Partial<Supplier>) {
+    const url = `${environment.apiUrl}/suppliers`;
     this.store.update(id, supplier);
+    return UtilService.update(url, { payload: supplier }, this.http, this.store)
   }
 
   // remove(id: ID) {
