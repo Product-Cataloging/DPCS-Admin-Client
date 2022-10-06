@@ -10,15 +10,13 @@
   <mat-form-field class="d-block">
     <mat-label>Product Category</mat-label>
     <mat-select formControlName="category_id" required>
-      <mat-option value="1">First option</mat-option>
-      <mat-option value="2">Second option</mat-option>
+      <mat-option *ngFor="let category of categories$|async" [value]='category.id'>{{ category.name }}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field class="d-block">
     <mat-label>Product Supplier</mat-label>
     <mat-select formControlName="supplier_id" required>
-      <mat-option value="1">First option</mat-option>
-      <mat-option value="2">Second option</mat-option>
+      <mat-option *ngFor="let supplier of suppliers$|async" [value]='supplier.id'>{{ supplier.name }}</mat-option>
     </mat-select>
   </mat-form-field>
 
