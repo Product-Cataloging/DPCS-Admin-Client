@@ -19,7 +19,7 @@ export class UnitOfMeasureFormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: UnitOfMeasure) {
     this.form = this.fb.group({
       name: [this.data.name],
-      alias: [this.data.alias]
+      abbreviation: [this.data.abbreviation]
     })
   }
 

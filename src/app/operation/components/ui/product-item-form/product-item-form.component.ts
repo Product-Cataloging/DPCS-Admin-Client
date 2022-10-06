@@ -2,8 +2,8 @@ import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
-import { Currency } from 'src/app/operation/models/currency.model';
 import { ProductItem } from 'src/app/operation/models/product-item.model';
+import { UnitOfMeasure } from 'src/app/operation/models/unit-of-measure.model';
 import { UnitOfMeasureQuery } from 'src/app/operation/state/unit-of-measure.query';
 import { UnitOfMeasureService } from 'src/app/operation/state/unit-of-measure.service';
 
@@ -16,7 +16,7 @@ export class ProductItemFormComponent implements OnInit {
 
   form: FormGroup;
   @Output() submitForm = new EventEmitter();
-  units_of_measure$: Observable<Currency[]> = this.unitOfMeasureQuery.selectAll();
+  units_of_measure$: Observable<UnitOfMeasure[]> = this.unitOfMeasureQuery.selectAll();
 
   constructor(
     private unitOfMeasureQuery: UnitOfMeasureQuery,

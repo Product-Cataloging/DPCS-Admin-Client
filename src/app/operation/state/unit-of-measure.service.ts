@@ -14,9 +14,9 @@ export class UnitOfMeasureService {
   }
 
   units_of_measure: UnitOfMeasure[] = [
-    { id: 1, name: 'Kilogram', alias: "Kg" },
-    { id: 2, name: 'Centimeter', alias: "Cm" },
-    { id: 3, name: 'Litre', alias: "Lr" },
+    { id: 1, name: 'Kilogram', abbreviation: "Kg" },
+    { id: 2, name: 'Centimeter', abbreviation: "Cm" },
+    { id: 3, name: 'Litre', abbreviation: "Lr" },
   ]
 
   get() {

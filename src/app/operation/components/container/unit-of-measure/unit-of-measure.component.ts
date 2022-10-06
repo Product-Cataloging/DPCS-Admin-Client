@@ -18,7 +18,7 @@ export class UnitOfMeasureComponent implements OnInit {
 
   columns: Column[] = [
     { name: 'name', label: 'Name' },
-    { name: 'alias', label: 'Alias' },
+    { name: 'abbreviation', label: 'Abbreviation' },
   ];
 
   tableActions = [
@@ -37,7 +37,7 @@ export class UnitOfMeasureComponent implements OnInit {
   // onNewClick(): void {
   //   const dialogRef = this.dialog.open(UnitOfMeasureFormComponent, {
   //     width: '500px',
-  //     data: { id: null, name: '', alias: '' },
+  //     data: { id: null, name: '', abbreviation: '' },
   //   });
 
   //   const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {

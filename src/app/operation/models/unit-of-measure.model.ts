@@ -1,7 +1,7 @@
 export interface UnitOfMeasure {
   id: number;
   name: string;
-  alias: string;
+  abbreviation: string;
 }
 
 export function createUnitOfMeasure(params: Partial<UnitOfMeasure>) {

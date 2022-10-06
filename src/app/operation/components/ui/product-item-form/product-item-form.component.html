@@ -15,7 +15,7 @@
     <mat-label>Unit of Measure</mat-label>
     <mat-select formControlName="unit_id" required>
       <mat-option *ngFor="let unit_of_measure of units_of_measure$|async" [value]='unit_of_measure.id'>{{
-        unit_of_measure.alias }}</mat-option>
+        unit_of_measure.abbreviation }}</mat-option>
     </mat-select>
   </mat-form-field>
 
