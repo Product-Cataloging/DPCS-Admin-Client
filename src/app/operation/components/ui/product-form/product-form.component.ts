@@ -30,7 +30,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitForm.emit();
+    this.submitForm.emit(this.form.value);
   }
 
   onClose() {

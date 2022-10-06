@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ID } from '@datorama/akita';
 import { tap } from 'rxjs/operators';
+import { UtilService } from 'src/app/shared/services/util.service';
+import { environment } from 'src/environments/environment';
 import { Product } from '../models/product.model';
 import { ProductStore } from './product.store';
 
@@ -30,7 +32,10 @@ export class ProductService {
   }
 
   add(product: Product) {
-    this.store.add(product);
+    const url = `${environment.apiUrl}/products`;
+    this.store.add(product)//remove when connected with api
+    return UtilService.add(url, { payload: product }, this.http, this.store);
+    // return this.http.post('https://product-catalog-api.onrender.com/suppliers', {payload: supplier})
   }
 
   update(id: number, product: Partial<Product>) {
