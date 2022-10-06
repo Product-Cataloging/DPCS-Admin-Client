@@ -38,7 +38,9 @@ export class CategoryService {
   }
 
   update(id: number, category: Partial<Category>) {
+    const url = `${environment.apiUrl}/categories`;
     this.store.update(id, category);
+    return UtilService.update(url, { payload: category }, this.http, this.store)
   }
 
   remove(id: ID) {

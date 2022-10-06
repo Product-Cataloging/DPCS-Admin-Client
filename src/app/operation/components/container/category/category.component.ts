@@ -59,7 +59,7 @@ export class CategoryComponent implements OnInit {
       });
 
       const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
-        console.log('The dialog was submitted');
+        this.service.update($event.item.id, data).subscribe()
         dialogRef.close();
       });
 
