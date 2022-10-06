@@ -10,11 +10,12 @@ import { UnitOfMeasureComponent } from './components/container/unit-of-measure/u
 const routes: Routes = [
   { path: '', redirectTo: 'suppliers', pathMatch: 'full' },
   { path: 'suppliers', component: SupplierComponent },
-  { path: 'categories', component: CategoryComponent },
+  // { path: 'categories', component: CategoryComponent },
   { path: 'products', component: ProductComponent },
   { path: 'products/:id', component: ProductItemComponent },
   { path: 'currencies', component: CurrencyComponent },
-  { path: 'units_of_measure', component: UnitOfMeasureComponent }
+  { path: 'units_of_measure', component: UnitOfMeasureComponent },
+  { path: '**', redirectTo: 'suppliers' }
 ];
 
 @NgModule({
