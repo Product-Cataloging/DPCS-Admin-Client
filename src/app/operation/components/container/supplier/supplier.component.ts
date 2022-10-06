@@ -18,6 +18,14 @@ export class SupplierComponent implements OnInit {
 
   columns: Column[] = [
     { name: 'name', label: 'Supplier Name' },
+    { name: 'description', label: 'Description' },
+    { name: 'address_line_1', label: 'Address Line 1' },
+    { name: 'address_line_2', label: 'Address Line 2' },
+    { name: 'primary_phone_number', label: 'Primary Phone Number' },
+    { name: 'secondary_phone_number', label: 'Secondary Phone Number' },
+    { name: 'postal_code', label: 'Postal Code' },
+    { name: 'email', label: 'Email' },
+    { name: 'fax', label: 'Fax' },
   ];
 
   tableActions = [
@@ -55,7 +63,17 @@ export class SupplierComponent implements OnInit {
   onNewClick(): void {
     const dialogRef = this.dialog.open(SupplierFormComponent, {
       width: '500px',
-      data: { id: null, name: '' },
+      data: {
+        id: null, name: '',
+        description: '',
+        address_line_1: '',
+        address_line_2: '',
+        primary_phone_number: '',
+        secondary_phone_number: '',
+        postal_code: '',
+        email: '',
+        fax: '',
+      },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
