@@ -41,7 +41,7 @@ export class CurrencyComponent implements OnInit {
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
-      console.log('The dialog was submitted');
+      this.service.add(data).subscribe();
       dialogRef.close();
     });
 

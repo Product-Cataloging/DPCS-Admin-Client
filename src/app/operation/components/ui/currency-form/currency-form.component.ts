@@ -27,7 +27,7 @@ export class CurrencyFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitForm.emit();
+    this.submitForm.emit(this.form.value);
   }
 
   onClose() {
