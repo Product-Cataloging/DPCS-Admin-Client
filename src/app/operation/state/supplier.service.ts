@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { TitleStrategy } from '@angular/router';
 import { ID } from '@datorama/akita';
 import { tap } from 'rxjs/operators';
+import { UtilService } from 'src/app/shared/services/util.service';
+import { environment } from 'src/environments/environment';
 import { Supplier } from '../models/supplier.model';
 import { SupplierStore } from './supplier.store';
 
@@ -27,7 +29,10 @@ export class SupplierService {
   }
 
   add(supplier: Supplier) {
-    this.store.add(supplier);
+    const url = `${environment.apiUrl}/suppliers`;
+    this.store.add(supplier)//remove when connected with api
+    return UtilService.add(url, { payload: supplier }, this.http, this.store);
+    // return this.http.post('https://product-catalog-api.onrender.com/suppliers', {payload: supplier})
   }
 
   update(id: number, supplier: Partial<Supplier>) {

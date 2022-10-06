@@ -27,7 +27,7 @@ export class SupplierFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitForm.emit();
+    this.submitForm.emit(this.form.value);
   }
 
   onClose() {
