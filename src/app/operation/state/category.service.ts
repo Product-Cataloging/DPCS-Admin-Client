@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ID } from '@datorama/akita';
 import { tap } from 'rxjs/operators';
+import { UtilService } from 'src/app/shared/services/util.service';
+import { environment } from 'src/environments/environment';
 import { Category } from '../models/category.model';
 import { CategoryStore } from './category.store';
 
@@ -29,6 +31,10 @@ export class CategoryService {
 
   add(category: Category) {
     this.store.add(category);
+    const url = `${environment.apiUrl}/categories`;
+    this.store.add(category)//remove when connected with api
+    return UtilService.add(url, { payload: category }, this.http, this.store);
+    // return this.http.post('https://product-catalog-api.onrender.com/suppliers', {payload: supplier})
   }
 
   update(id: number, category: Partial<Category>) {
