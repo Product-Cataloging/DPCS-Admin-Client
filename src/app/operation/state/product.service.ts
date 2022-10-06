@@ -39,7 +39,9 @@ export class ProductService {
   }
 
   update(id: number, product: Partial<Product>) {
+    const url = `${environment.apiUrl}/products`;
     this.store.update(id, product);
+    return UtilService.update(url, { payload: product }, this.http, this.store)
   }
 
   remove(id: ID) {
