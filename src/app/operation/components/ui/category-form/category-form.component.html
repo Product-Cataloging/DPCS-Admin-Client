@@ -9,9 +9,8 @@
   </mat-form-field>
   <mat-form-field class="d-block">
     <mat-label>Parent Category</mat-label>
-    <mat-select formControlName="parent_id">
-      <mat-option value="1">First option</mat-option>
-      <mat-option value="2">Second option</mat-option>
+    <mat-select formControlName="parent_id" required>
+      <mat-option *ngFor="let category of categories$|async" [value]='category.id'>{{ category.name }}</mat-option>
     </mat-select>
   </mat-form-field>
 

@@ -17,7 +17,7 @@ export class CategoryComponent implements OnInit {
   categories$: Observable<Category[]> = this.query.selectAll();
 
   columns: Column[] = [
-    { name: 'name', label: 'Supplier Name' },
+    { name: 'name', label: 'Category Name' },
     { name: 'description', label: 'Description' },
     { name: 'parent_id', label: 'Parent Category ID' },
   ];
