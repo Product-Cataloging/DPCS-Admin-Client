@@ -32,7 +32,7 @@ export class CategoryFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.categoryService.get()
+    this.categoryService.get().subscribe();
   }
 
   onSubmit() {

@@ -32,7 +32,7 @@ export class CategoryComponent implements OnInit {
     private query: CategoryQuery) { }
 
   ngOnInit(): void {
-    this.service.get();
+    this.service.get().subscribe();
   }
 
   onNewClick() {

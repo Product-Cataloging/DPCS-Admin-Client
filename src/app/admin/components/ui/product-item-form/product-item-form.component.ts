@@ -2,6 +2,12 @@ import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
+import { Currency } from '../../../models/currency.model';
+import { Supplier } from '../../../models/supplier.model';
+import { CurrencyQuery } from '../../../state/currency.query';
+import { CurrencyService } from '../../../state/currency.service';
+import { SupplierQuery } from '../../../state/supplier.query';
+import { SupplierService } from '../../../state/supplier.service';
 import { ProductItem } from '../../../models/product-item.model';
 import { UnitOfMeasure } from '../../../models/unit-of-measure.model';
 import { UnitOfMeasureQuery } from '../../../state/unit-of-measure.query';
@@ -16,11 +22,17 @@ export class ProductItemFormComponent implements OnInit {
 
   form: FormGroup;
   @Output() submitForm = new EventEmitter();
-  units_of_measure$: Observable<UnitOfMeasure[]> = this.unitOfMeasureQuery.selectAll();
+  package_units$: Observable<UnitOfMeasure[]> = this.unitOfMeasureQuery.selectAll();
+  currencies$: Observable<Currency[]> = this.currencyQuery.selectAll();
+  suppliers$: Observable<Supplier[]> = this.supplierQuery.selectAll();
 
   constructor(
     private unitOfMeasureQuery: UnitOfMeasureQuery,
     private unitOfMeasureService: UnitOfMeasureService,
+    private currencyQuery: CurrencyQuery,
+    private currencyService: CurrencyService,
+    private supplierQuery: SupplierQuery,
+    private supplierService: SupplierService,
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<ProductItemFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ProductItem
@@ -29,12 +41,18 @@ export class ProductItemFormComponent implements OnInit {
       color: [this.data.color],
       material: [this.data.material],
       dimensions: [this.data.dimensions],
-      unit_id: [this.data.unit_id],
+      quantity: [this.data.quantity],
+      price: [this.data.price],
+      package_unit_id: [this.data.package_unit_id],
+      currency_id: [this.data.quantity],
+      supplier_id: [this.data.supplier_id],
     });
   }
 
   ngOnInit(): void {
-    this.unitOfMeasureService.get();
+    this.unitOfMeasureService.get().subscribe();
+    this.currencyService.get().subscribe();
+    this.supplierService.get().subscribe();
   }
 
   onSubmit() {

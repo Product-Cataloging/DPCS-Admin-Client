@@ -12,10 +12,32 @@
     <input matInput formControlName="material">
   </mat-form-field>
   <mat-form-field class="d-block">
-    <mat-label>Unit of Measure</mat-label>
-    <mat-select formControlName="unit_id" required>
-      <mat-option *ngFor="let unit_of_measure of units_of_measure$|async" [value]='unit_of_measure.id'>{{
-        unit_of_measure.abbreviation }}</mat-option>
+    <mat-label>Quantity</mat-label>
+    <input matInput formControlName="quantity">
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price">
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Package Unit ID</mat-label>
+    <mat-select formControlName="package_unit_id" required>
+      <mat-option *ngFor="let package_unit of package_units$|async" [value]='package_unit.id'>{{
+        package_unit.abbreviation }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Currency</mat-label>
+    <mat-select formControlName="currency_id" required>
+      <mat-option *ngFor="let currency of currencies$|async" [value]='currency.id'>{{
+        currency.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Supplier</mat-label>
+    <mat-select formControlName="supplier_id" required>
+      <mat-option *ngFor="let supplier of suppliers$|async" [value]='supplier.id'>{{
+        supplier.name }}</mat-option>
     </mat-select>
   </mat-form-field>
 

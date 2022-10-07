@@ -27,7 +27,11 @@ export class ProductItemComponent implements OnInit {
     { name: 'dimensions', label: 'Dimensions' },
     { name: 'color', label: 'Color' },
     { name: 'material', label: 'Material' },
-    { name: 'unit_id', label: 'Unit of Measure ID' },
+    { name: 'quantity', label: 'Quantity' },
+    { name: 'price', label: 'Price' },
+    { name: 'package_unit_id', label: 'Package Unit ID' },
+    { name: 'currency_id', label: 'Currency ID' },
+    { name: 'supplier_id', label: 'Supplier ID' },
   ];
 
   tableActions = [
@@ -43,7 +47,7 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(param => {
       this.product_id = param['id'];
-      this.service.get(param['id']);
+      this.service.get(param['id']).subscribe();
     })
 
     this.user_type = localStorage.getItem('user_type');
@@ -52,7 +56,7 @@ export class ProductItemComponent implements OnInit {
   onNewClick(): void {
     const dialogRef = this.dialog.open(ProductItemFormComponent, {
       width: '500px',
-      data: { id: null, dimensions: '', color: '', material: '', unit_id: null },
+      data: { id: null, dimensions: '', color: '', material: '', package_unit_id: null, quantity: null, price: null, currency_id: null, supplier_id: null },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {

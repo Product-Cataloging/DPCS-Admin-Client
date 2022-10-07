@@ -20,19 +20,16 @@ export class UnitOfMeasureService {
   ]
 
   get() {
-    // return this.http.get<UnitOfMeasure[]>('https://api.com').pipe(tap(entities => {
-    //   this.store.set(entities);
-    // }));
-    this.store.set(this.units_of_measure);
+    const url = `${environment.apiUrl}/units_of_measure`;
+    return UtilService.get(url, this.http, this.store);
   }
 
-  add(unitOfMeasure: UnitOfMeasure) {
-    this.store.add(unitOfMeasure);
-  }
+  // add(unitOfMeasure: UnitOfMeasure) {
+  //   this.store.add(unitOfMeasure);
+  // }
 
   update(id: number, unitOfMeasure: Partial<UnitOfMeasure>) {
-    const url = `${environment.apiUrl}/currencies`;
-    this.store.update(id, unitOfMeasure);
+    const url = `${environment.apiUrl}/units_of_measure`;
     return UtilService.update(url, { payload: unitOfMeasure }, this.http, this.store)
   }
 

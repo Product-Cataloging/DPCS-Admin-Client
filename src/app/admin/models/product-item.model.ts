@@ -3,8 +3,12 @@ export interface ProductItem {
   color: string;
   dimensions: string;
   material: string;
-  unit_id: number;
+  quantity: number;
+  price: number;
   product_id: number;
+  package_unit_id: number;
+  currency_id: number;
+  supplier_id: number;
 }
 
 export function createProductItem(params: Partial<ProductItem>) {

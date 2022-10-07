@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://https://product-catalog-api.onrender.com'
+  apiUrl: 'https://product-catalog-api.onrender.com'
 };
