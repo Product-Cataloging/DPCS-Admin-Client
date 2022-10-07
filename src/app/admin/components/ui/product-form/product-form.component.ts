@@ -20,7 +20,6 @@ export class ProductFormComponent implements OnInit {
   form: FormGroup;
   @Output() submitForm = new EventEmitter();
 
-  suppliers$: Observable<Supplier[]> = this.supplierQuery.selectAll();
   categories$: Observable<Category[]> = this.categoryQuery.selectAll();
 
   constructor(
@@ -42,7 +41,6 @@ export class ProductFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.supplierService.get().subscribe();
     this.categoryService.get().subscribe();
   }
 

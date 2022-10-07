@@ -37,7 +37,7 @@ export class ProductComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.service.get()
+    this.service.get().subscribe();
   }
 
   onNewClick(): void {
