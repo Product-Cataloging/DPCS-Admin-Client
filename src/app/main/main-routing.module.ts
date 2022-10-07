@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../auth/shared/auth.guard';
 import { LayoutComponent } from './components/container/layout/layout.component';
 
 const routes: Routes = [
@@ -7,8 +8,9 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', loadChildren: () => import('../operation/operation.module').then(m => m.OperationModule) }
-    ]
+      { path: '', loadChildren: () => import('../admin/admin.module').then(m => m.AdminModule) }
+    ],
+    canActivate: [AuthGuard]
   }
 ];
 

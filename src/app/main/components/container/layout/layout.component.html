@@ -1,5 +1,5 @@
 <div class="d-flex flex-column" style="height: 100%">
-  <app-header></app-header>
+  <app-header (signOut)="signOutUser()"></app-header>
   <div class="container my-4 flex-fill">
     <router-outlet></router-outlet>
   </div>

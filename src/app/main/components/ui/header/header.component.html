@@ -17,11 +17,12 @@
       </div>
 
       <div class="text-end">
-        <button [routerLink]="['/users']" type="button" class="btn btn-sm btn-outline-light me-2 px-3">
+        <button *ngIf="user_type == 'Admin'" [routerLink]="['/users']" type="button"
+          class="btn btn-sm btn-outline-light me-2 px-3">
           <i class="pi pi-users"></i>
           Users
         </button>
-        <button type="button" class="btn btn-sm btn-warning px-3">
+        <button type="button" class="btn btn-sm btn-warning px-3" (click)="onSignOut()">
           <i class="pi pi-sign-out"></i>
           Sign-out
         </button>
