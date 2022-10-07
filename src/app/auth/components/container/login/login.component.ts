@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
 
   onLogin($event: any) {
     this.service.proceedLogin($event).subscribe((res: any) => {
-      console.log(res);
       if (res.success == true) {
         localStorage.setItem('token', res.jwt);
         var _extractedToken = res.jwt.split('.')[1];
@@ -30,7 +29,6 @@ export class LoginComponent implements OnInit {
         for (const key in _finaldata) {
           localStorage.setItem(key, _finaldata[key]);
         }
-        console.log(localStorage)
         this.router.navigate(['']);
       } else {
         this.errors = res.errors;
