@@ -32,7 +32,7 @@ export class UserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.service.get();
+    this.service.get().subscribe();
   }
 
   onNewClick(): void {
