@@ -43,7 +43,7 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(param => {
       this.product_id = param['id'];
-      this.service.get(param['id']);
+      this.service.get(param['id']).subscribe();
     })
 
     this.user_type = localStorage.getItem('user_type');

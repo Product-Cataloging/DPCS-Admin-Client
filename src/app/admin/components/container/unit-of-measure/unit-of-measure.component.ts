@@ -31,7 +31,7 @@ export class UnitOfMeasureComponent implements OnInit {
     private query: UnitOfMeasureQuery) { }
 
   ngOnInit(): void {
-    this.service.get()
+    this.service.get().subscribe();
   }
 
   // onNewClick(): void {

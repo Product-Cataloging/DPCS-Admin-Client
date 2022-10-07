@@ -34,7 +34,7 @@ export class ProductItemFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.unitOfMeasureService.get();
+    this.unitOfMeasureService.get().subscribe();
   }
 
   onSubmit() {
