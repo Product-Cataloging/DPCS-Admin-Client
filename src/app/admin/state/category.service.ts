@@ -14,17 +14,17 @@ export class CategoryService {
   }
 
   get() {
-    const url = `${environment.apiUrl}/categories`;
+    const url = `${environment.apiUrl}/category`;
     return UtilService.get(url, this.http, this.store);
   }
 
   add(category: Category) {
-    const url = `${environment.apiUrl}/categories`;
+    const url = `${environment.apiUrl}/category`;
     return UtilService.add(url, { payload: category }, this.http, this.store);
   }
 
   update(id: number, category: Partial<Category>) {
-    const url = `${environment.apiUrl}/categories`;
+    const url = `${environment.apiUrl}/category`;
     return UtilService.update(url, { payload: category }, this.http, this.store)
   }
 
