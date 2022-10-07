@@ -31,7 +31,7 @@ export class CurrencyComponent implements OnInit {
     private query: CurrencyQuery) { }
 
   ngOnInit(): void {
-    this.service.get()
+    this.service.get().subscribe();
   }
 
   // onNewClick(): void {
