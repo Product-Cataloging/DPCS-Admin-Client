@@ -10,7 +10,7 @@ export class RoleGuard implements CanActivate {
   constructor(private router: Router) { }
 
   canActivate() {
-    if (localStorage.getItem('user_type')) {
+    if (localStorage.getItem('user_type') == 'admin') {
       return true
     } else {
       this.router.navigate([''])

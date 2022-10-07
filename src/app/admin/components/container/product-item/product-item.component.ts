@@ -15,6 +15,8 @@ import { ProductItemFormComponent } from '../../ui/product-item-form/product-ite
 })
 export class ProductItemComponent implements OnInit {
 
+  user_type: string | null = null;
+
   public product_id: number | null = null;
 
   product_items$: Observable<ProductItem[]> = this.query.selectAll();
@@ -43,6 +45,8 @@ export class ProductItemComponent implements OnInit {
       this.product_id = param['id'];
       this.service.get(param['id']);
     })
+
+    this.user_type = localStorage.getItem('user_type');
   }
 
   onNewClick(): void {

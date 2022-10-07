@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RoleGuard } from '../auth/shared/role.guard';
 import { CategoryComponent } from './components/container/category/category.component';
 import { CurrencyComponent } from './components/container/currency/currency.component';
 import { ProductItemComponent } from './components/container/product-item/product-item.component';
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'products/:id', component: ProductItemComponent },
   { path: 'currencies', component: CurrencyComponent },
   { path: 'units_of_measure', component: UnitOfMeasureComponent },
-  { path: 'users', component: UserComponent },
+  { path: 'users', component: UserComponent, canActivate: [RoleGuard] },
   { path: '**', redirectTo: 'suppliers' }
 ];
 
