@@ -1,1 +1,5 @@
-<p>login works!</p>
+<div class="login-body">
+  <div class="login-form-container">
+    <app-login-form [errors]="errors" (submitForm)="onLogin($event)"></app-login-form>
+  </div>
+</div>
