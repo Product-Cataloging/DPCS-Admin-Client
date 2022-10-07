@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppCommonModule } from './app.common.module';
 import { ToastModule } from 'primeng/toast';
+import { AuthModule } from './auth/auth.module';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { ToastModule } from 'primeng/toast';
     HttpClientModule,
     ToastModule,
     AppCommonModule,
+    AuthModule,
+    environment.production ? [] : AkitaNgDevtools.forRoot()
 
   ],
   providers: [],

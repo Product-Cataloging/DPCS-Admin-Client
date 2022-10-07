@@ -1,0 +1,50 @@
+<form [formGroup]="form" (submit)="onSubmit()" class="p-3">
+  <mat-form-field class="d-block">
+    <mat-label>Company Name</mat-label>
+    <input matInput formControlName="name" required>
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" required>
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Address Line 1</mat-label>
+    <input matInput formControlName="address_line_1" required>
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Address Line 2</mat-label>
+    <input matInput formControlName="address_line_2">
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Primary Phone Number</mat-label>
+    <input matInput formControlName="primary_phone_number" required>
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Secondary Phone Number</mat-label>
+    <input matInput formControlName="secondary_phone_number">
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Postal Code</mat-label>
+    <input matInput formControlName="postal_code">
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Fax</mat-label>
+    <input matInput formControlName="fax">
+  </mat-form-field>
+
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button type="button" color="warn" (click)="onClose()">
+      <mat-icon>remove_circle</mat-icon>
+      Cancel
+    </button>
+    &nbsp;
+    <button mat-raised-button color="primary" type="submit" class="justify-content-center align-items-center">
+      <mat-icon>save</mat-icon>
+      Save
+    </button>
+  </div>
+</form>

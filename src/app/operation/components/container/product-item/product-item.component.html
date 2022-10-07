@@ -1,0 +1,26 @@
+<div class="d-flex">
+  <div class="flex-grow-1">
+    <button mat-raised-button class="action-button bg-success text-white px-4" (click)="onNewClick()">
+      <i class="pi pi-plus-circle"></i>
+      New
+    </button>
+  </div>
+
+  <div class="text-end">
+    <button mat-raised-button class="action-button bg-primary text-white px-4 mx-2" (click)="onApprove()">
+      <i class="pi pi-check"></i>
+      Approve
+    </button>
+    <button mat-raised-button class="action-button bg-danger text-white px-4" (click)="onDecline()">
+      <i class="pi pi-times"></i>
+      Decline
+    </button>
+  </div>
+</div>
+
+<div class="my-3">
+  <app-list #list [columns]="columns" [caption]="'Product Items'" [actions]="tableActions" [hasAction]="true"
+    [checkbox]="true" [data]="product_items$|async" (actionClick)="onClick($event)"
+    (selectedData)="onSelectProductItem($event)">
+  </app-list>
+</div>
