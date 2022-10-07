@@ -42,8 +42,8 @@ export class ProductFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.supplierService.get();
-    this.categoryService.get();
+    this.supplierService.get().subscribe();
+    this.categoryService.get().subscribe();
   }
 
   onSubmit() {
