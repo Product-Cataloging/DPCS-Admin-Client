@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://https://product-catalog-api.onrender.com'
+  apiUrl: 'https://product-catalog-api.onrender.com'
 };
 
 /*
