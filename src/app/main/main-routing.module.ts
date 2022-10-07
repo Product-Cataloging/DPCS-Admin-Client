@@ -7,7 +7,7 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', loadChildren: () => import('../operation/operation.module').then(m => m.OperationModule) }
+      { path: '', loadChildren: () => import('../admin/admin.module').then(m => m.AdminModule) }
     ]
   }
 ];
