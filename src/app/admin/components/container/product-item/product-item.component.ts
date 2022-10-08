@@ -33,6 +33,7 @@ export class ProductItemComponent implements OnInit {
     { name: 'unit_of_measure_name', label: 'Unit of Measure Name' },
     { name: 'currency_name', label: 'Currency Name' },
     { name: 'supplier_company_name', label: 'Supplier Name' },
+    { name: 'status', label: 'status' },
   ];
 
   tableActions = [
@@ -61,6 +62,7 @@ export class ProductItemComponent implements OnInit {
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
+      data.product_id = this.product_id;//add the product it to the product-item being added
       this.service.add(data).subscribe();
       dialogRef.close();
     });

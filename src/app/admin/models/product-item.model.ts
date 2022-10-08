@@ -14,6 +14,7 @@ export interface ProductItem {
   currency_name: string;
   supplier_id: number;
   supplier_company_name: string;
+  status: 'Approved' | 'Waiting' | 'Declined';
 }
 
 export function createProductItem(params: Partial<ProductItem>) {
