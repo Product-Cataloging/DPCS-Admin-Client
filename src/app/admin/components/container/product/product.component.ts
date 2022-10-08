@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
     { name: 'brand', label: 'Brand' },
     { name: 'description', label: 'Description' },
     { name: 'image_url', label: 'Image Url' },
-    { name: 'category_id', label: 'Category ID' },
+    { name: 'category_name', label: 'Category Name' },
   ];
 
   tableActions = [

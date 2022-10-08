@@ -24,14 +24,15 @@ export class ProductItemComponent implements OnInit {
   selectedItems: ProductItem[] = [];
 
   columns: Column[] = [
-    { name: 'dimensions', label: 'Dimensions' },
+    { name: 'dimension', label: 'Dimension' },
     { name: 'color', label: 'Color' },
     { name: 'material', label: 'Material' },
+    { name: 'capacity', label: 'Capacity' },
     { name: 'quantity', label: 'Quantity' },
     { name: 'price', label: 'Price' },
-    { name: 'package_unit_id', label: 'Package Unit ID' },
-    { name: 'currency_id', label: 'Currency ID' },
-    { name: 'supplier_id', label: 'Supplier ID' },
+    { name: 'unit_of_measure_name', label: 'Unit of Measure Name' },
+    { name: 'currency_name', label: 'Currency Name' },
+    { name: 'supplier_company_name', label: 'Supplier Name' },
   ];
 
   tableActions = [
@@ -56,7 +57,7 @@ export class ProductItemComponent implements OnInit {
   onNewClick(): void {
     const dialogRef = this.dialog.open(ProductItemFormComponent, {
       width: '500px',
-      data: { id: null, dimensions: '', color: '', material: '', package_unit_id: null, quantity: null, price: null, currency_id: null, supplier_id: null },
+      data: { id: null, dimension: '', color: '', material: '', capacity: '', unit_of_measure_id: null, quantity: null, price: null, currency_id: null, supplier_id: null },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
