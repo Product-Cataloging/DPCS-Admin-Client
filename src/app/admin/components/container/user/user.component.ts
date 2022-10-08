@@ -17,8 +17,10 @@ export class UserComponent implements OnInit {
   users$: Observable<User[]> = this.query.selectAll();
 
   columns: Column[] = [
+    { name: 'username', label: 'Name' },
     { name: 'email', label: 'Email' },
-    { name: 'user_role', label: 'User Role' },
+    { name: 'user_type', label: 'User Type' },
+    { name: 'is_active', label: 'Active Status' },
   ];
 
   tableActions = [
@@ -38,7 +40,7 @@ export class UserComponent implements OnInit {
   onNewClick(): void {
     const dialogRef = this.dialog.open(UserFormComponent, {
       width: '500px',
-      data: { id: null, email: '', password: '', user_role: null },
+      data: { id: null, username: '', email: '', password: '', user_type: '', is_active: true },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
@@ -52,6 +54,7 @@ export class UserComponent implements OnInit {
   }
 
   onClick($event: any) {
+    console.log($event)
     if ($event.type === 'edit') {
       const dialogRef = this.dialog.open(UserFormComponent, {
         width: '500px',

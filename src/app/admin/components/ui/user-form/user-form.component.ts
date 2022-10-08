@@ -21,9 +21,11 @@ export class UserFormComponent implements OnInit {
   ) {
     this.form = this.fb.group({
       email: [this.data.email],
+      username: [this.data.username],
       password: [this.data.password],
       confirm_password: [this.data.password],
-      user_role: [this.data.user_role],
+      user_type: [this.data.user_type],
+      is_active: [this.data.is_active]
     });
   }
 
