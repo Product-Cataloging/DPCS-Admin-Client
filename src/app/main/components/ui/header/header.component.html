@@ -3,26 +3,26 @@
     <div
       class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start flex-sm-column flex-md-row">
       <a href="/" class="d-flex align-items-center mb-lg-0 text-white text-decoration-none">
-        <h1 class="m-0 fw-bold">MAVEKO</h1>
+        <h1 class="m-0 fw-bold logo">MAVEKO</h1>
       </a>
 
       <div class="flex-fill d-block" style="font-size: 12px">
         <ul class="nav col-12 me-md-auto justify-content-center mb-md-0">
-          <li><a [routerLink]="['/suppliers']" class="nav-link px-2 text-white">Suppliers</a></li>
-          <!-- <li><a [routerLink]="['/categories']" class="nav-link px-2 text-white">Categories</a></li> -->
-          <li><a [routerLink]="['/products']" class="nav-link px-2 text-white">Products</a></li>
-          <li><a [routerLink]="['/currencies']" class="nav-link px-2 text-white">Currencies</a></li>
-          <li><a [routerLink]="['/units_of_measure']" class="nav-link px-2 text-white">Units of Measure</a></li>
+          <li><a [routerLink]="['/suppliers']" class="nav-link px-3 navbar-links">Suppliers</a></li>
+          <!-- <li><a [routerLink]="['/categories']" class="nav-link px-3 navbar-links">Categories</a></li> -->
+          <li><a [routerLink]="['/products']" class="nav-link px-3 navbar-links">Products</a></li>
+          <!-- <li><a [routerLink]="['/currencies']" class="nav-link px-3 navbar-links">Currencies</a></li> -->
+          <!-- <li><a [routerLink]="['/units_of_measure']" class="nav-link px-3 navbar-links">Units of Measure</a></li> -->
         </ul>
       </div>
 
       <div class="text-end">
         <button *ngIf="user_type == 'Admin'" [routerLink]="['/users']" type="button"
-          class="btn btn-sm btn-outline-light me-2 px-3">
+          class="btn btn-sm btn-outline-light me-2 px-3 header-btn">
           <i class="pi pi-users"></i>
           Users
         </button>
-        <button type="button" class="btn btn-sm btn-warning px-3" (click)="onSignOut()">
+        <button type="button" class="btn btn-sm btn-warning px-3 header-btn" (click)="onSignOut()">
           <i class="pi pi-sign-out"></i>
           Sign-out
         </button>
