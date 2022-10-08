@@ -17,12 +17,11 @@ export class SupplierComponent implements OnInit {
   suppliers$: Observable<Supplier[]> = this.query.selectAll();
 
   columns: Column[] = [
-    { name: 'name', label: 'Supplier Name' },
-    { name: 'description', label: 'Description' },
-    { name: 'address_line_1', label: 'Address Line 1' },
+    { name: 'company_name', label: 'Company Name' },
+    { name: 'email', label: 'Email' },
+    { name: 'address_line', label: 'Address Line' },
     { name: 'primary_phone_number', label: 'Primary Phone Number' },
     { name: 'postal_code', label: 'Postal Code' },
-    { name: 'email', label: 'Email' },
     { name: 'fax', label: 'Fax' },
   ];
 
@@ -62,9 +61,9 @@ export class SupplierComponent implements OnInit {
     const dialogRef = this.dialog.open(SupplierFormComponent, {
       width: '500px',
       data: {
-        id: null, name: '',
-        description: '',
-        address_line_1: '',
+        id: null,
+        company_name: '',
+        address_line: '',
         primary_phone_number: '',
         postal_code: '',
         email: '',

@@ -19,9 +19,8 @@ export class SupplierFormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: Supplier
   ) {
     this.form = this.fb.group({
-      name: [this.data.name],
-      description: [this.data.description],
-      address_line_1: [this.data.address_line_1],
+      company_name: [this.data.company_name],
+      address_line: [this.data.address_line],
       primary_phone_number: [this.data.primary_phone_number],
       postal_code: [this.data.postal_code],
       email: [this.data.email],

@@ -37,7 +37,7 @@
     <mat-label>Supplier</mat-label>
     <mat-select formControlName="supplier_id" required>
       <mat-option *ngFor="let supplier of suppliers$|async" [value]='supplier.id'>{{
-        supplier.name }}</mat-option>
+        supplier.company_name }}</mat-option>
     </mat-select>
   </mat-form-field>
 
