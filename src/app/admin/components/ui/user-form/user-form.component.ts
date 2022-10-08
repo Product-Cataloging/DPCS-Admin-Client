@@ -33,13 +33,14 @@ export class UserFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.form.value.password === this.form.value.confirm_password) {
-      this.mismatch = false;
-      delete this.form.value.confirm_password;
-      this.submitForm.emit(this.form.value);
-    } else {
-      this.mismatch = true;
-    }
+    console.log(this.form.value)
+    // if (this.form.value.password === this.form.value.confirm_password) {
+    //   this.mismatch = false;
+    // delete this.form.value.confirm_password;
+    this.submitForm.emit(this.form.value);
+    // } else {
+    //   this.mismatch = true;
+    // }
   }
 
   onClose() {

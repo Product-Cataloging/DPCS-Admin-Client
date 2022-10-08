@@ -19,14 +19,14 @@ export class UserService {
   }
 
   add(user: User) {
-    const url = `${environment.apiUrl}/users`;
+    const url = `${environment.apiUrl}/sign_up`;
     return UtilService.add(url, { payload: user }, this.http, this.store);
   }
 
-  update(id: number, user: Partial<User>) {
-    const url = `${environment.apiUrl}/users/${id}`;
-    return UtilService.update(url, { payload: user }, this.http, this.store);
-  }
+  // update(id: number, user: Partial<User>) {
+  //   const url = `${environment.apiUrl}/users/${id}`;
+  //   return UtilService.update(url, { payload: user }, this.http, this.store);
+  // }
 
   remove(id: ID) {
     this.store.remove(id);

@@ -40,7 +40,7 @@ export class UserComponent implements OnInit {
   onNewClick(): void {
     const dialogRef = this.dialog.open(UserFormComponent, {
       width: '500px',
-      data: { id: null, username: '', email: '', password: '', user_type: '', is_active: true },
+      data: { id: null, username: '', email: '', password: '', user_type: 'Operator', is_active: true },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
@@ -62,7 +62,7 @@ export class UserComponent implements OnInit {
       });
 
       const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
-        this.service.update($event.item.id, data).subscribe()
+        // this.service.update($event.item.id, data).subscribe()
         dialogRef.close();
       });
 
