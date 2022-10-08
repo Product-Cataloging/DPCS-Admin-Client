@@ -31,7 +31,6 @@ export class ProductFormComponent implements OnInit {
     public dialogRef: MatDialogRef<ProductFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product
   ) {
-    console.log(this.data)
     this.form = this.fb.group({
       name: [this.data.name],
       description: [this.data.description],

@@ -19,7 +19,7 @@ export class CategoryComponent implements OnInit {
   columns: Column[] = [
     { name: 'name', label: 'Category Name' },
     { name: 'description', label: 'Description' },
-    { name: 'parent_id', label: 'Parent Category ID' },
+    { name: 'ancestry', label: 'Parent Category ID' },
   ];
 
   tableActions = [
@@ -38,7 +38,7 @@ export class CategoryComponent implements OnInit {
   onNewClick() {
     const dialogRef = this.dialog.open(CategoryFormComponent, {
       width: '500px',
-      data: { id: null, name: '', description: '', parent_id: null },
+      data: { id: null, name: '', description: '', ancestry: null },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {

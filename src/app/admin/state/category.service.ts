@@ -15,7 +15,27 @@ export class CategoryService {
 
   get() {
     const url = `${environment.apiUrl}/category`;
-    return UtilService.get(url, this.http, this.store);
+    return this.http.get(url)
+      .pipe(
+        tap((result: any) => {
+          if (result.success) {
+            let data = result.data;
+            let response: Category[] = [];
+            for (const key in data) {
+              if (data[key].children.length > 0) {
+                data[key].children.forEach((category: any) => {
+                  response.push(category);
+                });
+              }
+            }
+            this.store.set(response);
+          } else {
+            console.log(result.error);
+          }
+        }, error => {
+          console.log(error.message)
+        })
+      );
   }
 
   add(category: Category) {
