@@ -23,7 +23,7 @@ export class UnitOfMeasureService {
   // }
 
   update(id: number, unitOfMeasure: Partial<UnitOfMeasure>) {
-    const url = `${environment.apiUrl}/unit_of_measures`;
+    const url = `${environment.apiUrl}/unit_of_measures/${id}`;
     return UtilService.update(url, { payload: unitOfMeasure }, this.http, this.store)
   }
 

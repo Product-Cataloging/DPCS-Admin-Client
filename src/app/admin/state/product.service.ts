@@ -24,7 +24,7 @@ export class ProductService {
   }
 
   update(id: number, product: Partial<Product>) {
-    const url = `${environment.apiUrl}/products`;
+    const url = `${environment.apiUrl}/products/${id}`;
     return UtilService.update(url, { payload: product }, this.http, this.store)
   }
 

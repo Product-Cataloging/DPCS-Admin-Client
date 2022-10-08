@@ -24,7 +24,7 @@ export class UserService {
   }
 
   update(id: number, user: Partial<User>) {
-    const url = `${environment.apiUrl}/users`;
+    const url = `${environment.apiUrl}/users/${id}`;
     return UtilService.update(url, { payload: user }, this.http, this.store);
   }
 
