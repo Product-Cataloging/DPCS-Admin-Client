@@ -41,7 +41,14 @@
             )}}" *ngIf=" column.name=='status' ; else plainText">
             {{d[column.name]}}
           </span>
-          <ng-template #plainText>{{d[column.name]}}</ng-template>
+          <ng-template #plainText>
+            <a href={{d[column.name]}} target="_blank" *ngIf="column.name === 'image_url'; else noLinkText">
+              {{d[column.name]}}
+            </a>
+            <ng-template #noLinkText>
+              {{d[column.name]}}
+            </ng-template>
+          </ng-template>
         </span>
       </td>
       <ng-container *ngIf="hasAction">
