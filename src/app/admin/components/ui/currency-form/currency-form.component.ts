@@ -19,7 +19,7 @@ export class CurrencyFormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: Currency) {
     this.form = this.fb.group({
       name: [this.data.name],
-      alias: [this.data.alias]
+      alias: [this.data.aliass]//data coming from the database has 'aliass' field not 'alias'
     })
   }
 

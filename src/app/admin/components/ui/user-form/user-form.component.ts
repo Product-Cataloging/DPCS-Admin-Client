@@ -21,9 +21,11 @@ export class UserFormComponent implements OnInit {
   ) {
     this.form = this.fb.group({
       email: [this.data.email],
+      username: [this.data.username],
       password: [this.data.password],
       confirm_password: [this.data.password],
-      user_role: [this.data.user_role],
+      user_type: [this.data.user_type],
+      is_active: [this.data.is_active]
     });
   }
 
@@ -31,13 +33,14 @@ export class UserFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.form.value.password === this.form.value.confirm_password) {
-      this.mismatch = false;
-      delete this.form.value.confirm_password;
-      this.submitForm.emit(this.form.value);
-    } else {
-      this.mismatch = true;
-    }
+    console.log(this.form.value)
+    // if (this.form.value.password === this.form.value.confirm_password) {
+    //   this.mismatch = false;
+    // delete this.form.value.confirm_password;
+    this.submitForm.emit(this.form.value);
+    // } else {
+    //   this.mismatch = true;
+    // }
   }
 
   onClose() {

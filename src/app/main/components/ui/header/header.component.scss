@@ -1,0 +1,13 @@
+.navbar-links{
+    color: #bbb !important
+}
+
+.navbar-links:hover{
+    // text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    // transform: scale(1.15);
+    color: white !important;
+}
+
+.logo:hover, .header-btn:hover, .navbar-links:hover{
+    transform: scale(1.05);
+}

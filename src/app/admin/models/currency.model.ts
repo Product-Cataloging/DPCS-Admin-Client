@@ -1,7 +1,7 @@
 export interface Currency {
   id: number;
   name: string;
-  alias: string;
+  aliass: string;//data coming from the database has 'aliass' field not 'alias'
 }
 
 export function createCurrency(params: Partial<Currency>) {

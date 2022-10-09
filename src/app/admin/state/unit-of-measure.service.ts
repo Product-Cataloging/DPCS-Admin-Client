@@ -13,14 +13,8 @@ export class UnitOfMeasureService {
   constructor(private store: UnitOfMeasureStore, private http: HttpClient) {
   }
 
-  units_of_measure: UnitOfMeasure[] = [
-    { id: 1, name: 'Kilogram', abbreviation: "Kg" },
-    { id: 2, name: 'Centimeter', abbreviation: "Cm" },
-    { id: 3, name: 'Litre', abbreviation: "Lr" },
-  ]
-
   get() {
-    const url = `${environment.apiUrl}/units_of_measure`;
+    const url = `${environment.apiUrl}/unit_of_measures`;
     return UtilService.get(url, this.http, this.store);
   }
 
@@ -29,7 +23,7 @@ export class UnitOfMeasureService {
   // }
 
   update(id: number, unitOfMeasure: Partial<UnitOfMeasure>) {
-    const url = `${environment.apiUrl}/units_of_measure`;
+    const url = `${environment.apiUrl}/unit_of_measures/${id}`;
     return UtilService.update(url, { payload: unitOfMeasure }, this.http, this.store)
   }
 

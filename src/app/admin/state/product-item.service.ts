@@ -13,18 +13,18 @@ export class ProductItemService {
   constructor(private store: ProductItemStore, private http: HttpClient) {
   }
 
-  get(id: number) {
-    const url = `${environment.apiUrl}/product_items/${id}`;
+  get(productId: number) {
+    const url = `${environment.apiUrl}/product/items/${productId}`;
     return UtilService.get(url, this.http, this.store);
   }
 
   add(productItem: ProductItem) {
-    const url = `${environment.apiUrl}/product-items`;
+    const url = `${environment.apiUrl}/product_items`;
     return UtilService.add(url, { payload: productItem }, this.http, this.store);
   }
 
-  update(id: number, productItem: Partial<ProductItem>) {
-    const url = `${environment.apiUrl}/product-items`;
+  update(productId: number, productItem: Partial<ProductItem>) {
+    const url = `${environment.apiUrl}/product_items/${productId}`;
     return UtilService.update(url, { payload: productItem }, this.http, this.store)
   }
 

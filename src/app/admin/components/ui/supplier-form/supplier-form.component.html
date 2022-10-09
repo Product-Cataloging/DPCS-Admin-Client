@@ -1,19 +1,15 @@
 <form [formGroup]="form" (submit)="onSubmit()" class="p-3">
   <mat-form-field class="d-block">
     <mat-label>Company Name</mat-label>
-    <input matInput formControlName="name" required>
+    <input matInput formControlName="company_name" required>
   </mat-form-field>
   <mat-form-field class="d-block">
     <mat-label>Email</mat-label>
     <input matInput formControlName="email" required>
   </mat-form-field>
   <mat-form-field class="d-block">
-    <mat-label>Description</mat-label>
-    <textarea matInput formControlName="description"></textarea>
-  </mat-form-field>
-  <mat-form-field class="d-block">
-    <mat-label>Address Line 1</mat-label>
-    <input matInput formControlName="address_line_1" required>
+    <mat-label>Address Line</mat-label>
+    <input matInput formControlName="address_line" required>
   </mat-form-field>
   <mat-form-field class="d-block">
     <mat-label>Primary Phone Number</mat-label>

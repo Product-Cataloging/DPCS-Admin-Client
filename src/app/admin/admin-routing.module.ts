@@ -15,8 +15,8 @@ const routes: Routes = [
   // { path: 'categories', component: CategoryComponent },
   { path: 'products', component: ProductComponent },
   { path: 'products/:id', component: ProductItemComponent },
-  { path: 'currencies', component: CurrencyComponent },
-  { path: 'units_of_measure', component: UnitOfMeasureComponent },
+  // { path: 'currencies', component: CurrencyComponent },
+  // { path: 'units_of_measure', component: UnitOfMeasureComponent },
   { path: 'users', component: UserComponent, canActivate: [RoleGuard] },
   { path: '**', redirectTo: 'suppliers' }
 ];

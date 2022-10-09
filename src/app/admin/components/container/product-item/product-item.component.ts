@@ -24,14 +24,15 @@ export class ProductItemComponent implements OnInit {
   selectedItems: ProductItem[] = [];
 
   columns: Column[] = [
-    { name: 'dimensions', label: 'Dimensions' },
+    { name: 'dimension', label: 'Dimension' },
     { name: 'color', label: 'Color' },
     { name: 'material', label: 'Material' },
-    { name: 'quantity', label: 'Quantity' },
+    { name: 'capacity', label: 'Capacity' },
     { name: 'price', label: 'Price' },
-    { name: 'package_unit_id', label: 'Package Unit ID' },
-    { name: 'currency_id', label: 'Currency ID' },
-    { name: 'supplier_id', label: 'Supplier ID' },
+    { name: 'unit_of_measure_name', label: 'Unit of Measure Name' },
+    { name: 'currency_name', label: 'Currency Name' },
+    { name: 'supplier_company_name', label: 'Supplier Name' },
+    { name: 'status', label: 'Status' },
   ];
 
   tableActions = [
@@ -56,10 +57,12 @@ export class ProductItemComponent implements OnInit {
   onNewClick(): void {
     const dialogRef = this.dialog.open(ProductItemFormComponent, {
       width: '500px',
-      data: { id: null, dimensions: '', color: '', material: '', package_unit_id: null, quantity: null, price: null, currency_id: null, supplier_id: null },
+      data: { id: null, dimension: '', color: '', material: '', capacity: '', unit_of_measure_id: null, price: null, currency_id: null, supplier_id: null },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
+      data.product_id = this.product_id;//add the product it to the product-item being added
+      data.status = 'Waiting';//add waiting status to new product item being created
       this.service.add(data).subscribe();
       dialogRef.close();
     });
@@ -91,13 +94,11 @@ export class ProductItemComponent implements OnInit {
     this.selectedItems = $event;
   }
 
-  onApprove() {
-    console.log('selected items to be approved are: ');
-    console.log(this.selectedItems);
-  }
-
-  onDecline() {
-    console.log('selected items to be declined are: ');
-    console.log(this.selectedItems);
+  onApproveProductItem(approveStatus: boolean) {
+    let newStatus: 'Approved' | 'Declined' = approveStatus ? 'Approved' : 'Declined';
+    this.selectedItems.forEach((item: ProductItem) => {
+      this.service.update(item.id, { status: newStatus }).subscribe();
+    });
+    this.selectedItems = []
   }
 }

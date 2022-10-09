@@ -18,7 +18,7 @@ export class CurrencyComponent implements OnInit {
 
   columns: Column[] = [
     { name: 'name', label: 'Name' },
-    { name: 'alias', label: 'Alias' },
+    { name: 'aliass', label: 'Alias' },
   ];
 
   tableActions = [
@@ -37,7 +37,7 @@ export class CurrencyComponent implements OnInit {
   // onNewClick(): void {
   //   const dialogRef = this.dialog.open(CurrencyFormComponent, {
   //     width: '500px',
-  //     data: { id: null, name: '', alias: '' },
+  //     data: { id: null, name: '', aliass: '' },
   //   });
 
   //   const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {

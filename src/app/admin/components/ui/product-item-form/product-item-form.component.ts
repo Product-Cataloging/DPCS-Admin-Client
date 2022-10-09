@@ -40,11 +40,11 @@ export class ProductItemFormComponent implements OnInit {
     this.form = this.fb.group({
       color: [this.data.color],
       material: [this.data.material],
-      dimensions: [this.data.dimensions],
-      quantity: [this.data.quantity],
+      dimension: [this.data.dimension],
+      capacity: [this.data.capacity],
       price: [this.data.price],
-      package_unit_id: [this.data.package_unit_id],
-      currency_id: [this.data.quantity],
+      unit_of_measure_id: [this.data.unit_of_measure_id],
+      currency_id: [this.data.currency_id],
       supplier_id: [this.data.supplier_id],
     });
   }

@@ -24,7 +24,7 @@ export class CurrencyService {
   // }
 
   update(id: number, currency: Partial<Currency>) {
-    const url = `${environment.apiUrl}/currencies`;
+    const url = `${environment.apiUrl}/currencies/${id}`;
     return UtilService.update(url, { payload: currency }, this.http, this.store)
   }
 

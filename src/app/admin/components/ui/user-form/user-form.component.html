@@ -1,5 +1,9 @@
 <form [formGroup]="form" (submit)="onSubmit()" class="p-3">
   <mat-form-field class="d-block">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" formControlName="username" required>
+  </mat-form-field>
+  <mat-form-field class="d-block">
     <mat-label>Email</mat-label>
     <input matInput type="email" formControlName="email" required>
   </mat-form-field>
@@ -13,12 +17,15 @@
     <mat-error *ngIf="mismatch">Password must match</mat-error>
   </mat-form-field>
   <mat-form-field class="d-block">
-    <mat-label>User Role</mat-label>
-    <mat-select formControlName="user_role" required>
-      <mat-option value='operator'>Operator</mat-option>
-      <mat-option value='admin'>Admin</mat-option>
+    <mat-label>User Type</mat-label>
+    <mat-select formControlName="user_type" required>
+      <mat-option value='Operator'>Operator</mat-option>
+      <mat-option value='Admin'>Admin</mat-option>
     </mat-select>
   </mat-form-field>
+  <section class="d-block">
+    <mat-checkbox color="primary" formControlName="is_active">Is Active</mat-checkbox>
+  </section>
 
   <div mat-dialog-actions align="end">
     <button mat-raised-button type="button" color="warn" (click)="onClose()">

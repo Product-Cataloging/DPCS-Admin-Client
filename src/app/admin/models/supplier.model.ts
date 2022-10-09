@@ -1,12 +1,11 @@
 export interface Supplier {
   id: number;
-  name: string;
-  description: string;
-  address_line_1: string;
+  company_name: string;
+  address_line: string;
   primary_phone_number: string;
-  postal_code: string;
   email: string;
-  fax: string;
+  postal_code?: string;
+  fax?: string;
 }
 
 export function createSupplier(params: Partial<Supplier>) {
