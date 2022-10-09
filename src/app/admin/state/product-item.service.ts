@@ -14,7 +14,7 @@ export class ProductItemService {
   }
 
   get(productId: number) {
-    const url = `${environment.apiUrl}/product/items/${productId}`;
+    const url = `${environment.apiUrl}/product/items/admin/${productId}`;
     return UtilService.get(url, this.http, this.store);
   }
 

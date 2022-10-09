@@ -42,10 +42,8 @@
             {{d[column.name]}}
           </span>
           <ng-template #plainText>
-            <a href={{d[column.name]}} target="_blank" style="max-width: 250px; display: block;
-                  white-space: nowrap; 
-                  overflow: hidden;
-                  text-overflow: ellipsis;" *ngIf="column.name === 'image_url'; else noLinkText">
+            <a href={{d[column.name]}} target="_blank" class="imageLink"
+              *ngIf="column.name === 'image_url'; else noLinkText">
               {{d[column.name]}}
             </a>
             <ng-template #noLinkText>
