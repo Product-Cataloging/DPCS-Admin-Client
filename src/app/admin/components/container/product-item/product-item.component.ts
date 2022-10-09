@@ -32,7 +32,7 @@ export class ProductItemComponent implements OnInit {
     { name: 'unit_of_measure_name', label: 'Unit of Measure Name' },
     { name: 'currency_name', label: 'Currency Name' },
     { name: 'supplier_company_name', label: 'Supplier Name' },
-    { name: 'status', label: 'status' },
+    { name: 'status', label: 'Status' },
   ];
 
   tableActions = [
@@ -94,13 +94,11 @@ export class ProductItemComponent implements OnInit {
     this.selectedItems = $event;
   }
 
-  onApprove() {
-    console.log('selected items to be approved are: ');
-    console.log(this.selectedItems);
-  }
-
-  onDecline() {
-    console.log('selected items to be declined are: ');
-    console.log(this.selectedItems);
+  onApproveProductItem(approveStatus: boolean) {
+    let newStatus: 'Approved' | 'Declined' = approveStatus ? 'Approved' : 'Declined';
+    this.selectedItems.forEach((item: ProductItem) => {
+      this.service.update(item.id, { status: newStatus }).subscribe();
+    });
+    this.selectedItems = []
   }
 }
