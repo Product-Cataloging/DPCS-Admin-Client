@@ -42,7 +42,6 @@ export class ProductItemFormComponent implements OnInit {
       material: [this.data.material],
       dimension: [this.data.dimension],
       capacity: [this.data.capacity],
-      quantity: [this.data.quantity],
       price: [this.data.price],
       unit_of_measure_id: [this.data.unit_of_measure_id],
       currency_id: [this.data.currency_id],

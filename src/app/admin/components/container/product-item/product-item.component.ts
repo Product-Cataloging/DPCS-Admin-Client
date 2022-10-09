@@ -28,7 +28,6 @@ export class ProductItemComponent implements OnInit {
     { name: 'color', label: 'Color' },
     { name: 'material', label: 'Material' },
     { name: 'capacity', label: 'Capacity' },
-    { name: 'quantity', label: 'Quantity' },
     { name: 'price', label: 'Price' },
     { name: 'unit_of_measure_name', label: 'Unit of Measure Name' },
     { name: 'currency_name', label: 'Currency Name' },
@@ -58,11 +57,12 @@ export class ProductItemComponent implements OnInit {
   onNewClick(): void {
     const dialogRef = this.dialog.open(ProductItemFormComponent, {
       width: '500px',
-      data: { id: null, dimension: '', color: '', material: '', capacity: '', unit_of_measure_id: null, quantity: null, price: null, currency_id: null, supplier_id: null },
+      data: { id: null, dimension: '', color: '', material: '', capacity: '', unit_of_measure_id: null, price: null, currency_id: null, supplier_id: null },
     });
 
     const submitForm = (dialogRef.componentInstance as any).submitForm.subscribe((data: any) => {
       data.product_id = this.product_id;//add the product it to the product-item being added
+      data.status = 'Waiting';//add waiting status to new product item being created
       this.service.add(data).subscribe();
       dialogRef.close();
     });

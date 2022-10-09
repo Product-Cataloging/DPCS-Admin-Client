@@ -16,19 +16,15 @@
     <input matInput formControlName="capacity">
   </mat-form-field>
   <mat-form-field class="d-block">
-    <mat-label>Quantity</mat-label>
-    <input matInput formControlName="quantity">
-  </mat-form-field>
-  <mat-form-field class="d-block">
-    <mat-label>Price</mat-label>
-    <input matInput formControlName="price">
-  </mat-form-field>
-  <mat-form-field class="d-block">
     <mat-label>Unit of Measure ID</mat-label>
     <mat-select formControlName="unit_of_measure_id" required>
       <mat-option *ngFor="let package_unit of package_units$|async" [value]='package_unit.id'>{{
         package_unit.abbreviation }}</mat-option>
     </mat-select>
+  </mat-form-field>
+  <mat-form-field class="d-block">
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price">
   </mat-form-field>
   <mat-form-field class="d-block">
     <mat-label>Currency</mat-label>

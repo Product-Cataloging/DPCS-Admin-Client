@@ -4,7 +4,6 @@ export interface ProductItem {
   dimension: string;
   material: string;
   capacity: string;
-  quantity: number;
   price: number;
   product_id: number;
   product_name: string;
