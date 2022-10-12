@@ -1,5 +1,6 @@
 <p-table #dt [value]="data" (onHeaderCheckboxToggle)="onSelect()" (onRowSelect)="onSelect()"
-  (onRowUnselect)="onSelect()" [(selection)]="checkedData" [scrollable]="true" [columns]="columns" scrollHeight="71vh">
+  (onRowUnselect)="onSelect()" [(selection)]="checkedData" [scrollable]="true" [columns]="columns" scrollHeight="71vh"
+  [paginator]="hasPagination" [rows]="rows">
   <ng-template *ngIf="caption" pTemplate="caption">
     {{caption}}
   </ng-template>
@@ -31,11 +32,11 @@
         <span *ngIf="column.type===undefined">
           <span class="badge rounded-pill border bg-opacity-25 border-opacity-10
             {{(
-                d[column.name]=='Approved'? 
-                  'border-success bg-success text-success' : 
+                d[column.name]=='Approved'?
+                  'border-success bg-success text-success' :
                   (
-                    d[column.name]=='Declined' ? 
-                      'border-danger bg-danger text-danger' : 
+                    d[column.name]=='Declined' ?
+                      'border-danger bg-danger text-danger' :
                       ' border-primary bg-primary text-primary'
                   )
             )}}" *ngIf=" column.name=='status' ; else plainText">
