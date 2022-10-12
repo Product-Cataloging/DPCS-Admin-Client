@@ -1,5 +1,6 @@
 export interface Quotation {
   id: number;
+  product_name: string;
   email: string;
   image_url: string;
   description: string;

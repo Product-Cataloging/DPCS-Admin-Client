@@ -1,1 +1,4 @@
-<p>quotation works!</p>
+<div class="my-3">
+  <app-list #list [columns]="columns" [caption]="'Quotation Requests'" [hasAction]="false" [data]="quotation$|async">
+  </app-list>
+</div>
