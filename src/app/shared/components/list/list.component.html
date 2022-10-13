@@ -32,7 +32,7 @@
         <span *ngIf="column.type===undefined">
           <span class="badge rounded-pill border bg-opacity-25 border-opacity-10
             {{(
-                d[column.name]=='Approved'?
+                d[column.name]=='Approved' || d[column.name]=='Done' ?
                   'border-success bg-success text-success' :
                   (
                     d[column.name]=='Declined' ?
