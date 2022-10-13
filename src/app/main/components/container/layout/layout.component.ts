@@ -29,6 +29,6 @@ export class LayoutComponent implements OnInit {
   }
 
   markAsRead(id: number) {
-    this.notificationService.update(id, { status: 'Unread' }).subscribe();
+    this.notificationService.update(id, { status: 'Read' }).subscribe();
   }
 }

@@ -25,7 +25,22 @@ export class NotificationService {
 
   update(id: number, notification: Partial<Notification>) {
     const url = `${environment.apiUrl}/notifications/${id}`;
-    return UtilService.update(url, { payload: notification }, this.http, this.store)
+    return this.http.put(url, { payload: notification })
+      .pipe(
+        tap((result: any) => {
+          if (result.success) {
+            this.store.remove(result.data.id);
+          } else {
+            let errors = '';
+            result.errors.forEach((ele: any) => { errors += ele + '\n'; });
+            console.log(errors);
+          }
+        }, failure => {
+          let errors = '';
+          failure.error.errors.forEach((ele: any) => { errors += ele + '\n'; });
+          console.log(errors);
+        })
+      );
   }
 
   // remove(id: ID) {

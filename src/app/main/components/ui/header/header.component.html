@@ -25,11 +25,11 @@
         <mat-menu class="d-block" #notifications="matMenu">
           <div class="notifications-container">
             <div class="p-3 d-flex notification-item" *ngFor="let notification of notifications$|async">
-              <div class="pointer flex-fill text-start">
-                <div class="h6 text-dark" (click)="onNotificationClick(notification)">{{notification.sender}}</div>
+              <div class="pointer flex-fill text-start" (click)="onNotificationClick(notification)">
+                <div class="h6 text-dark">{{notification.sender}}</div>
                 <small class="d-block text-muted notification-message">{{notification.message}}</small>
               </div>
-              <div class="pointer ps-3 header-btn d-flex align-items-center">
+              <div class="pointer closeIcon ps-3 header-btn d-flex align-items-center">
                 <mat-icon (click)=" onCloseNotification(notification)">close</mat-icon>
               </div>
             </div>

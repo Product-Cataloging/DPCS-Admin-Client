@@ -37,6 +37,7 @@ export class HeaderComponent implements OnInit {
     const dialogRef = this.dialog.open(NotificationDetailsComponent, {
       width: '500px',
       data: notification,
+      disableClose: true,
     });
 
     const closeNotification = (dialogRef.componentInstance as any).closeNotification.subscribe(() => {
