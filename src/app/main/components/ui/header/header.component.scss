@@ -11,3 +11,15 @@
 .logo:hover, .header-btn:hover, .navbar-links:hover{
     transform: scale(1.05);
 }
+
+.menu-item{
+  width: 300px;
+  height: fit-content;
+}
+
+.notification-message{
+  width: 20%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

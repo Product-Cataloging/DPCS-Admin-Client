@@ -18,6 +18,16 @@
       </div>
 
       <div class="text-end">
+        <button class="btn btn-default me-2 btn-outline-dark header-btn" [matMenuTriggerFor]="notifications"
+          mat-icon-button>
+          <i class="text-light pi pi-bell"></i>
+        </button>
+        <mat-menu class="d-block" #notifications="matMenu">
+          <button mat-menu-item *ngFor="let notification of notifications$|async">
+            <mat-icon (click)="onCloseNotification(notification)">close</mat-icon>
+            <span (click)="onNotificationClick(notification)">{{notification.sender}}</span>
+          </button>
+        </mat-menu>
         <button *ngIf="user_type == 'Admin'" [routerLink]="['/users']" type="button"
           class="btn btn-sm btn-outline-light me-2 px-3 header-btn">
           <i class="pi pi-users"></i>
