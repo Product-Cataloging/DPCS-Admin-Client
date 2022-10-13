@@ -17,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
 import { ProductItemComponent } from './components/container/product-item/product-item.component';
 import { ProductItemFormComponent } from './components/ui/product-item-form/product-item-form.component';
 import { UserComponent } from './components/container/user/user.component';
-import { UserFormComponent } from './components/ui/user-form/user-form.component'
+import { UserFormComponent } from './components/ui/user-form/user-form.component';
+import { QuotationComponent } from './components/container/quotation/quotation.component'
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { UserFormComponent } from './components/ui/user-form/user-form.component
     ProductItemComponent,
     ProductItemFormComponent,
     UserComponent,
-    UserFormComponent
+    UserFormComponent,
+    QuotationComponent
   ],
   imports: [
     CommonModule,

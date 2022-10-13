@@ -5,6 +5,6 @@
 
 <div class="my-3">
   <app-list #list [columns]="columns" [caption]="'Products'" [actions]="tableActions" [hasAction]="false"
-    [data]="users$|async" (actionClick)="onClick($event)">
+    [data]="users$|async" (actionClick)="onClick($event)" [hasPagination]="true" [rows]="15">
   </app-list>
 </div>

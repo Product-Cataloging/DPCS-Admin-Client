@@ -17,6 +17,8 @@ export class ListComponent implements OnInit {
   @Input() loading: boolean = false;
   @Input() checkedData: any[] = [];
   @Input() columnFilterOptions: any[] = [];
+  @Input() hasPagination: boolean = false;
+  @Input() rows: number = 0;
 
 
   @Output() actionClick = new EventEmitter<any>();
