@@ -23,10 +23,17 @@
           <i class="text-light pi pi-bell"></i>
         </button>
         <mat-menu class="d-block" #notifications="matMenu">
-          <button mat-menu-item *ngFor="let notification of notifications$|async">
-            <mat-icon (click)="onCloseNotification(notification)">close</mat-icon>
-            <span (click)="onNotificationClick(notification)">{{notification.sender}}</span>
-          </button>
+          <div class="notifications-container">
+            <div class="p-3 d-flex notification-item" *ngFor="let notification of notifications$|async">
+              <div class="pointer flex-fill text-start">
+                <div class="h6 text-dark" (click)="onNotificationClick(notification)">{{notification.sender}}</div>
+                <small class="d-block text-muted notification-message">{{notification.message}}</small>
+              </div>
+              <div class="pointer ps-3 header-btn d-flex align-items-center">
+                <mat-icon (click)=" onCloseNotification(notification)">close</mat-icon>
+              </div>
+            </div>
+          </div>
         </mat-menu>
         <button *ngIf="user_type == 'Admin'" [routerLink]="['/users']" type="button"
           class="btn btn-sm btn-outline-light me-2 px-3 header-btn">
