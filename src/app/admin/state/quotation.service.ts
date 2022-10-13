@@ -14,7 +14,7 @@ export class QuotationService {
   }
 
   get() {
-    const url = `${environment.apiUrl}/quotations`;
+    const url = `${environment.apiUrl}/quotation_requests`;
     return UtilService.get(url, this.http, this.store);
   }
 
