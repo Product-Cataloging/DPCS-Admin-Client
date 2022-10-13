@@ -15,10 +15,13 @@ export class QuotationComponent implements OnInit {
   quotation$: Observable<Quotation[]> = this.query.selectAll();
 
   columns: Column[] = [
-    { name: 'product_name', label: 'Product Name' },
+    { name: 'first_name', label: 'First Name' },
+    { name: 'last_name', label: 'Last Name' },
     { name: 'email', label: 'Email' },
-    { name: 'image_url', label: 'Image Url' },
+    { name: 'phone_number', label: 'Phone Number' },
+    { name: 'product_name', label: 'Product Name' },
     { name: 'description', label: 'Description' },
+    { name: 'image_url', label: 'Image Url' },
   ];
 
   constructor(
