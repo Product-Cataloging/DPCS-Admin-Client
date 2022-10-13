@@ -1,9 +1,12 @@
 export interface Quotation {
   id: number;
   product_name: string;
+  first_name: string;
+  last_name: string;
   email: string;
   image_url: string;
   description: string;
+  phone_number: string;
 }
 
 export function createQuotation(params: Partial<Quotation>) {
