@@ -48,7 +48,13 @@
               {{d[column.name]}}
             </a>
             <ng-template #noLinkText>
-              {{d[column.name]}}
+              <div class="wrapText" *ngIf="column.name === 'description'; else noWrapText">
+                {{d[column.name]}}
+              </div>
+              <ng-template #noWrapText>
+                {{d[column.name]}}
+              </ng-template>
+
             </ng-template>
           </ng-template>
         </span>
