@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/ui/header/header.component';
 import { FooterComponent } from './components/ui/footer/footer.component';
 import { MaterialModule } from '../app.material.module';
 import { NotificationDetailsComponent } from './components/ui/notification-details/notification-details.component';
+import { MatBadgeModule } from '@angular/material/badge'
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NotificationDetailsComponent } from './components/ui/notification-detai
   imports: [
     CommonModule,
     MainRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatBadgeModule
   ]
 })
 export class MainModule { }

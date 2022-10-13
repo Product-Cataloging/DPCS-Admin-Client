@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   @Output() signOut = new EventEmitter();
   @Output() markAsRead = new EventEmitter();
 
-  @Input() notifications$: Observable<Notification[]> | null = null;
+  @Input() notificationsList: Notification[] | null = [];
 
   constructor(
     private dialog: MatDialog
