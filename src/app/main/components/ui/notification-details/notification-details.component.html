@@ -1,0 +1,8 @@
+<div class="d-flex justify-content-between">
+  <small class="text-muted">From: {{data.sender}}</small>
+  <small class="text-muted">Date: {{ data.delivery_date }}</small>
+</div>
+<hr>
+<h2>{{data.title}}</h2>
+<p>{{data.message}}</p>
+<button mat-raised-button (click)="onCloseClick()" class="float-end">Close</button>

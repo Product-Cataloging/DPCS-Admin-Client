@@ -40,10 +40,13 @@ td {
   margin-right: 1em;
 }
 
-.imageLink {
+.imageLink, .wrapText {
   max-width: 250px;
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.wrapText {
+  max-width: 150px;
 }

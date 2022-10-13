@@ -18,6 +18,25 @@
       </div>
 
       <div class="text-end">
+        <button class="btn btn-default me-2 btn-outline-dark header-btn" [matMenuTriggerFor]="notifications"
+          mat-icon-button>
+          <i class="text-light pi pi-bell" [matBadge]="notificationsList ? notificationsList.length : 0"
+            matBadgeSize="small"
+            [matBadgeDisabled]="notificationsList ? (notificationsList.length > 0 ? 'false' : 'true') : 'true'"></i>
+        </button>
+        <mat-menu class="d-block" #notifications="matMenu">
+          <div class="notifications-container">
+            <div class="p-3 d-flex notification-item" *ngFor="let notification of notificationsList">
+              <div class="pointer flex-fill text-start" (click)="onNotificationClick(notification)">
+                <div class="h6 text-dark">{{notification.sender}}</div>
+                <small class="d-block text-muted notification-message">{{notification.message}}</small>
+              </div>
+              <div class="pointer closeIcon ps-3 header-btn d-flex align-items-center">
+                <mat-icon (click)=" onCloseNotification(notification)">close</mat-icon>
+              </div>
+            </div>
+          </div>
+        </mat-menu>
         <button *ngIf="user_type == 'Admin'" [routerLink]="['/users']" type="button"
           class="btn btn-sm btn-outline-light me-2 px-3 header-btn">
           <i class="pi pi-users"></i>

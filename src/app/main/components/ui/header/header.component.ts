@@ -1,4 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Notification } from '../.././../models/notification.model';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationDetailsComponent } from '../notification-details/notification-details.component';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +13,13 @@ export class HeaderComponent implements OnInit {
 
   user_type: string | null = null;
   @Output() signOut = new EventEmitter();
+  @Output() markAsRead = new EventEmitter();
 
-  constructor() { }
+  @Input() notificationsList: Notification[] | null = [];
+
+  constructor(
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.user_type = localStorage.getItem('user_type');
@@ -20,4 +29,25 @@ export class HeaderComponent implements OnInit {
     this.signOut.emit();
   }
 
+  onCloseNotification(notification: Notification) {
+    this.markAsRead.emit(notification.id);
+  }
+
+  onNotificationClick(notification: Notification) {
+    const dialogRef = this.dialog.open(NotificationDetailsComponent, {
+      width: '500px',
+      data: notification,
+      disableClose: true,
+    });
+
+    const closeNotification = (dialogRef.componentInstance as any).closeNotification.subscribe(() => {
+      console.log("closed")
+      this.markAsRead.emit(notification.id);
+      dialogRef.close();
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      closeNotification.unsubscribe();
+    });
+  }
 }

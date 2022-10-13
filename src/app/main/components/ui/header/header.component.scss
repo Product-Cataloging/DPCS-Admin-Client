@@ -11,3 +11,26 @@
 .logo:hover, .header-btn:hover, .navbar-links:hover{
     transform: scale(1.05);
 }
+
+.notification-message{
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notification-item:hover{
+  background-color: #eee;
+}
+
+.notifications-container{
+  max-height: 600px;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.closeIcon:hover{
+  color: rgb(255, 41, 41)
+}
