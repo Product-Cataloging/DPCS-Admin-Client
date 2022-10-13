@@ -1,5 +1,6 @@
 <div class="d-flex flex-column" style="height: 100%">
-  <app-header (signOut)="signOutUser()"></app-header>
+  <app-header (signOut)="signOutUser()" [notifications$]="notifications$" (markAsRead)="markAsRead($event)">
+  </app-header>
   <div class="container my-4 flex-fill">
     <router-outlet></router-outlet>
   </div>

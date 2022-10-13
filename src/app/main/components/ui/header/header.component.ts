@@ -1,8 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Notification } from '../.././../models/notification.model';
-import { NotificationQuery } from '../.././../state/notification.query';
-import { NotificationService } from '../../../state/notification.service';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationDetailsComponent } from '../notification-details/notification-details.component';
 
 @Component({
   selector: 'app-header',
@@ -13,17 +13,16 @@ export class HeaderComponent implements OnInit {
 
   user_type: string | null = null;
   @Output() signOut = new EventEmitter();
+  @Output() markAsRead = new EventEmitter();
 
-  notifications$: Observable<Notification[]> = this.notificationQuery.selectAll();
+  @Input() notifications$: Observable<Notification[]> | null = null;
 
   constructor(
-    private notificationQuery: NotificationQuery,
-    private notificationService: NotificationService
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
     this.user_type = localStorage.getItem('user_type');
-    this.notificationService.get().subscribe();
   }
 
   onSignOut() {
@@ -31,11 +30,23 @@ export class HeaderComponent implements OnInit {
   }
 
   onCloseNotification(notification: Notification) {
-    this.notificationService.update(notification.id, { status: 'Unread' }).subscribe();
+    this.markAsRead.emit(notification.id);
   }
 
   onNotificationClick(notification: Notification) {
-    console.log("read")
-    console.log(notification)
+    const dialogRef = this.dialog.open(NotificationDetailsComponent, {
+      width: '500px',
+      data: notification,
+    });
+
+    const closeNotification = (dialogRef.componentInstance as any).closeNotification.subscribe(() => {
+      console.log("closed")
+      this.markAsRead.emit(notification.id);
+      dialogRef.close();
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      closeNotification.unsubscribe();
+    });
   }
 }
