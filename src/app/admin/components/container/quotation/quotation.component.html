@@ -1,8 +1,13 @@
 <div class="">
   <div *ngIf="user_type == 'Operator'" class="text-end">
-    <button mat-raised-button class="action-button bg-danger text-white px-4" (click)="onMarkAsDone()">
-      <i class="pi pi-check"></i>
-      Mark as Done!
+    <button mat-raised-button class="action-button bg-warning px-4 mx-2" (click)="onMarkAsInprogress()">
+      <i class="pi pi-clock"></i>
+      Processing!
+    </button>
+
+    <button mat-raised-button class="action-button bg-success text-white px-4" (click)="onMarkAsDone()">
+      <i class="pi pi-check-circle"></i>
+      Addressed!
     </button>
   </div>
 </div>

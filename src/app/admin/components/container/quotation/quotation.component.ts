@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { Quotation } from 'src/app/admin/models/quotation.model';
 import { QuotationQuery } from 'src/app/admin/state/quotation.query';
 import { QuotationService } from 'src/app/admin/state/quotation.service';
-import { QuotationStore } from 'src/app/admin/state/quotation.store';
 import { Column } from 'src/app/shared/models/column.model';
 
 @Component({
@@ -33,15 +32,10 @@ export class QuotationComponent implements OnInit {
   constructor(
     private query: QuotationQuery,
     private service: QuotationService,
-    private store: QuotationStore,//delete after status is added to backend
   ) { }
 
   ngOnInit(): void {
-    this.service.get().subscribe((data) => {
-      data.data.forEach((item: Quotation) => {
-        this.store.update(item.id, { status: 'Waiting' });
-      });
-    });
+    this.service.get().subscribe();
     this.user_type = localStorage.getItem('user_type');
   }
 
@@ -51,7 +45,14 @@ export class QuotationComponent implements OnInit {
 
   onMarkAsDone() {
     this.selectedItems.forEach((item: Quotation) => {
-      this.store.update(item.id, { status: 'Done' });
+      this.service.update(item.id, { status: 'Addressed' }).subscribe();
+    });
+    this.selectedItems = []
+  }
+
+  onMarkAsInprogress() {
+    this.selectedItems.forEach((item: Quotation) => {
+      this.service.update(item.id, { status: 'Processing' }).subscribe();
     });
     this.selectedItems = []
   }

@@ -7,7 +7,7 @@ export interface Quotation {
   image_url: string;
   description: string;
   phone_number: string;
-  status: string;
+  status: 'Requested' | 'Processing' | 'Addressed';
   quantity: number;
 }
 
