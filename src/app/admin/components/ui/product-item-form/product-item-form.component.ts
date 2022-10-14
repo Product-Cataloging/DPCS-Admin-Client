@@ -9,9 +9,6 @@ import { CurrencyService } from '../../../state/currency.service';
 import { SupplierQuery } from '../../../state/supplier.query';
 import { SupplierService } from '../../../state/supplier.service';
 import { ProductItem } from '../../../models/product-item.model';
-import { UnitOfMeasure } from '../../../models/unit-of-measure.model';
-import { UnitOfMeasureQuery } from '../../../state/unit-of-measure.query';
-import { UnitOfMeasureService } from '../../../state/unit-of-measure.service';
 
 @Component({
   selector: 'app-product-item-form',
@@ -22,13 +19,10 @@ export class ProductItemFormComponent implements OnInit {
 
   form: FormGroup;
   @Output() submitForm = new EventEmitter();
-  package_units$: Observable<UnitOfMeasure[]> = this.unitOfMeasureQuery.selectAll();
   currencies$: Observable<Currency[]> = this.currencyQuery.selectAll();
   suppliers$: Observable<Supplier[]> = this.supplierQuery.selectAll();
 
   constructor(
-    private unitOfMeasureQuery: UnitOfMeasureQuery,
-    private unitOfMeasureService: UnitOfMeasureService,
     private currencyQuery: CurrencyQuery,
     private currencyService: CurrencyService,
     private supplierQuery: SupplierQuery,
@@ -43,14 +37,13 @@ export class ProductItemFormComponent implements OnInit {
       dimension: [this.data.dimension],
       capacity: [this.data.capacity],
       price: [this.data.price],
-      unit_of_measure_id: [this.data.unit_of_measure_id],
+      packaging_unit: [this.data.packaging_unit],
       currency_id: [this.data.currency_id],
       supplier_id: [this.data.supplier_id],
     });
   }
 
   ngOnInit(): void {
-    this.unitOfMeasureService.get().subscribe();
     this.currencyService.get().subscribe();
     this.supplierService.get().subscribe();
   }

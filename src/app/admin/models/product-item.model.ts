@@ -7,8 +7,7 @@ export interface ProductItem {
   price: number;
   product_id: number;
   product_name: string;
-  unit_of_measure_id: number;
-  unit_of_measure_name: string;
+  packaging_unit: string;
   currency_id: number;
   currency_name: string;
   supplier_id: number;
