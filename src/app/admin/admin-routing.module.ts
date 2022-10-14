@@ -7,7 +7,6 @@ import { ProductItemComponent } from './components/container/product-item/produc
 import { ProductComponent } from './components/container/product/product.component';
 import { QuotationComponent } from './components/container/quotation/quotation.component';
 import { SupplierComponent } from './components/container/supplier/supplier.component';
-import { UnitOfMeasureComponent } from './components/container/unit-of-measure/unit-of-measure.component';
 import { UserComponent } from './components/container/user/user.component';
 
 const routes: Routes = [
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: 'products', component: ProductComponent },
   { path: 'products/:id', component: ProductItemComponent },
   // { path: 'currencies', component: CurrencyComponent },
-  // { path: 'units_of_measure', component: UnitOfMeasureComponent },
   { path: 'users', component: UserComponent, canActivate: [RoleGuard] },
   { path: 'quotations', component: QuotationComponent },
   { path: '**', redirectTo: 'suppliers' }
