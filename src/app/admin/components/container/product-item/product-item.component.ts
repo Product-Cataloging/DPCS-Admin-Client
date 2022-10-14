@@ -28,7 +28,7 @@ export class ProductItemComponent implements OnInit {
     { name: 'color', label: 'Color' },
     { name: 'material', label: 'Material' },
     { name: 'capacity', label: 'Capacity' },
-    { name: 'packaging_unit', label: 'Packaging_unit' },
+    { name: 'packaging_unit', label: 'Packaging Unit' },
     { name: 'price', label: 'Price' },
     { name: 'currency_name', label: 'Currency Name' },
     { name: 'supplier_company_name', label: 'Supplier Name' },
