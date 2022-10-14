@@ -17,10 +17,7 @@
   </mat-form-field>
   <mat-form-field class="d-block">
     <mat-label>Packaging Unit</mat-label>
-    <mat-select formControlName="unit_of_measure_id" required>
-      <mat-option *ngFor="let package_unit of package_units$|async" [value]='package_unit.id'>{{
-        package_unit.abbreviation }}</mat-option>
-    </mat-select>
+    <input matInput formControlName="packaging_unit">
   </mat-form-field>
   <mat-form-field class="d-block">
     <mat-label>Price</mat-label>
