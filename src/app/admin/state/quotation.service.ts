@@ -22,9 +22,10 @@ export class QuotationService {
   //   this.store.add(quotation);
   // }
 
-  // update(id: number, quotation: Partial<Quotation>) {
-  //   this.store.update(id, quotation);
-  // }
+  update(id: number, quotation: Partial<Quotation>) {
+    const url = `${environment.apiUrl}/quotation_requests/${id}`;
+    return UtilService.update(url, { payload: quotation }, this.http, this.store)
+  }
 
   // remove(id: ID) {
   //   this.store.remove(id);

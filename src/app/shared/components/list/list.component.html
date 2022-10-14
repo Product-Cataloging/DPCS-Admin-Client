@@ -16,7 +16,7 @@
       <th *ngIf="checkbox">
         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
       </th>
-      <th *ngFor="let column of columns">
+      <th *ngFor="let column of columns" style="min-width: 100px">
         {{ column.label }}
       </th>
       <th *ngIf="hasAction" class="action">Actions</th>
@@ -32,12 +32,16 @@
         <span *ngIf="column.type===undefined">
           <span class="badge rounded-pill border bg-opacity-25 border-opacity-10
             {{(
-                d[column.name]=='Approved' || d[column.name]=='Done' ?
+                d[column.name]=='Approved' || d[column.name]=='Addressed' ?
                   'border-success bg-success text-success' :
                   (
                     d[column.name]=='Declined' ?
                       'border-danger bg-danger text-danger' :
-                      ' border-primary bg-primary text-primary'
+                      (
+                        d[column.name] == 'Processing' ?
+                          'border-warning bg-warning text-warning' :
+                          ' border-primary bg-primary text-primary'
+                      )
                   )
             )}}" *ngIf=" column.name=='status' ; else plainText">
             {{d[column.name]}}
