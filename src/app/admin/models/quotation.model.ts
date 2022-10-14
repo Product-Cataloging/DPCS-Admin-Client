@@ -8,6 +8,7 @@ export interface Quotation {
   description: string;
   phone_number: string;
   status: string;
+  quantity: number;
 }
 
 export function createQuotation(params: Partial<Quotation>) {

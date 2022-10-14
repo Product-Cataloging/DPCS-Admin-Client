@@ -24,6 +24,7 @@ export class QuotationComponent implements OnInit {
     { name: 'email', label: 'Email' },
     { name: 'phone_number', label: 'Phone Number' },
     { name: 'product_name', label: 'Product Name' },
+    { name: 'quantity', label: 'Quantity' },
     { name: 'description', label: 'Description' },
     { name: 'image_url', label: 'Image Url' },
     { name: 'status', label: 'Status' },
